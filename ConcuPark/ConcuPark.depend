@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1458872183 source:/home/nicolas/workspace/ConcuPark/src/Parque.cpp
+	"Parque.h"
+
+1458872951 /home/nicolas/workspace/ConcuPark/src/Parque.h
+	"Juego.h"
+
+1458872914 source:/home/nicolas/workspace/ConcuPark/src/main.cpp
+	<iostream>
+	"Parque.h"
+	<unistd.h>
+	<wait.h>
+
+1458873148 source:/home/nicolas/workspace/ConcuPark/src/Juego.cpp
+	"Juego.h"
+
+1458873643 /home/nicolas/workspace/ConcuPark/src/Juego.h
+	<mutex>
+
