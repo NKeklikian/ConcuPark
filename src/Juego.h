@@ -2,6 +2,7 @@
 #define JUEGO_H
 
 #include <mutex>
+#include "Persona.h"
 
 class Juego
 {

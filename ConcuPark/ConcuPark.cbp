@@ -12,7 +12,9 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="src" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="src" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -31,6 +34,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../src/Juego.cpp" />
+		<Unit filename="../src/Juego.h" />
+		<Unit filename="../src/Parque.cpp" />
+		<Unit filename="../src/Parque.h" />
+		<Unit filename="../src/Persona.cpp" />
+		<Unit filename="../src/Persona.h" />
+		<Unit filename="../src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

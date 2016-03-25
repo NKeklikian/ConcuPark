@@ -5,10 +5,11 @@
 class Persona
 {
     public:
-        Persona();
+        Persona(int presupuesto);
         virtual ~Persona();
     protected:
     private:
+        int presupuesto;
 };
 
 #endif // PERSONA_H

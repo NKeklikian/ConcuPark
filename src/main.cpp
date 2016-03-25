@@ -10,8 +10,8 @@ int main(){
     if (pid == 0){
         cout << "Proceso hijo!" << endl;
         cout << getpid() << endl;
-        Parque* park = new Parque();
-        delete park;
+        Parque* parque = new Parque();
+        delete parque;
     } else {
         cout << "Proceso padre!" << endl;
         cout << pid << endl;

@@ -1,5 +1,7 @@
 #include "Persona.h"
 
-Persona::Persona(){}
+Persona::Persona(int presupuesto){
+    this->presupuesto = presupuesto;
+}
 
 Persona::~Persona(){}
