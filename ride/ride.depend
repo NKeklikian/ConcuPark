@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1459194830 source:/home/gabriel/concu/ride/main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<semaphore.h>
+

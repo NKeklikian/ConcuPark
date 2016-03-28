@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1459196622 source:/home/gabriel/concu/persona/main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<fcntl.h>
+	<sys/stat.h>
+	<semaphore.h>
+	<unistd.h>
+
