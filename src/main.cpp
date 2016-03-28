@@ -13,9 +13,9 @@ int main(){
         Parque* parque = new Parque();
         delete parque;
     } else {
-        cout << "Proceso padre!" << endl;
-        cout << pid << endl;
         wait(NULL);
+        cout << "Proceso padre!" << endl;
+        cout << getpid() << endl;
     }
     return 0;
 }
