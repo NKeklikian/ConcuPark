@@ -1,7 +1,6 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
-#include <mutex>
 #include "Persona.h"
 
 class Juego
@@ -13,8 +12,6 @@ class Juego
     private:
         int capacidadMaxima;
         int precio;
-        std::mutex entrada;
-        std::mutex salida;
 };
 
 #endif // JUEGO_H
