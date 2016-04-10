@@ -1,53 +1,51 @@
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <semaphore.h>
-#include <unistd.h>
-#include <signal.h>
-
-#define NAME "/semtest"
+#include <vector>
+//#include "../fifos/FifoEscritura.h"
+#include "../fifos/FifoLectura.h"
 
 using namespace std;
 
-// CAMBIAR signal POR sigaction
-
-void sigproc(int){
-    signal(SIGINT, sigproc);
-    cout << "borrando el semaforo" << endl;
-
-    int status = sem_unlink(NAME);
-    if(status == -1){
-        perror("sem_unlink: sem_unlink failed");
-    }
-    exit(0);
-}
-
-void sigusr1(int){
-}
-
 int main()
 {
-    // seteo memoria compartida de tamanio 1 int para que me pasen la plata
+    static const int BUFFSIZE = sizeof(getpid());
+	static const std::string ARCHIVO_FIFO = "/tmp/cola_juego";
 
+    FifoLectura canal ( ARCHIVO_FIFO );
+    char buffer[BUFFSIZE];
+    pid_t pid;
 
-    // seteo el semaforo
+    canal.abrir();
 
-    signal(SIGINT, sigproc);
+    vector<pid_t> personas;
+    int capacidad_max = 10;
 
-    sem_t* sem = sem_open(NAME, O_CREAT, ALLPERMS, 1);
-    if(sem == SEM_FAILED){
-        perror("sem_open: sem_open failed");
-        exit(1);
+    while(personas.size() < capacidad_max){
+        std::cout << "[Lector] A punto de leer del fifo" << std::endl;
+        ssize_t bytesLeidos = canal.leer(static_cast<void*>(&pid),BUFFSIZE);
+        if(bytesLeidos == 0){
+            canal.cerrar();
+            canal.abrir();
+            continue;
+        }
+
+        //std::string mensaje = buffer;
+        //mensaje.resize ( bytesLeidos );
+        //cout << mensaje << endl;
+        //pid_t pid_leido = std::stoi(mensaje, nullptr, 10);
+        std::cout << "[Lector] Lei el pid del fifo: " << pid << std::endl;
+        personas.push_back(pid);
+        cout << "[Lector] Estado actual de la cola: ";
+        for(int i = 0; i < personas.size(); ++i){
+            cout << personas[i] << " ";
+        }
+        cout << endl;
     }
+    canal.cerrar();
+    canal.eliminar();
 
-    while(true);
-
-    int status = sem_unlink(NAME);
-    if(status == -1){
-        perror("sem_unlink: sem_unlink failed");
-    }
+    cout << "[Lector] La cola esta llena" << endl;
+    std::cout << "[Lector] Fin del proceso" << std::endl;
+    exit ( 0 );
 
     return 0;
 }

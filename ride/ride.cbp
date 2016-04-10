@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
@@ -35,6 +36,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../fifos/Fifo.cpp" />
+		<Unit filename="../fifos/Fifo.h" />
+		<Unit filename="../fifos/FifoEscritura.cpp" />
+		<Unit filename="../fifos/FifoEscritura.h" />
+		<Unit filename="../fifos/FifoLectura.cpp" />
+		<Unit filename="../fifos/FifoLectura.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

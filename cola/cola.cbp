@@ -2,24 +2,21 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="persona" />
+		<Option title="cola" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/persona" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/cola" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
-				<Linker>
-					<Add option="-lpthread" />
-				</Linker>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/persona" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/cola" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -35,12 +32,6 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../fifos/Fifo.cpp" />
-		<Unit filename="../fifos/Fifo.h" />
-		<Unit filename="../fifos/FifoEscritura.cpp" />
-		<Unit filename="../fifos/FifoEscritura.h" />
-		<Unit filename="../fifos/FifoLectura.cpp" />
-		<Unit filename="../fifos/FifoLectura.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

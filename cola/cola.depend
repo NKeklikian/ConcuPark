@@ -1,11 +1,15 @@
 # depslib dependency file v1.0
-1459194830 source:/home/gabriel/concu/ride/main.cpp
+1460320668 source:/home/gabriel/concu/ConcuPark/cola/main.cpp
 	<iostream>
-	<stdio.h>
+	"Cola.h"
+
+1460321763 source:/home/gabriel/concu/ConcuPark/cola/src/Runnable.cpp
+	"Runnable.h"
+	<unistd.h>
 	<stdlib.h>
-	<fcntl.h>
-	<sys/stat.h>
-	<semaphore.h>
+	<stdio.h>
+
+1460319405 /home/gabriel/concu/ConcuPark/cola/include/Runnable.h
 
 1415239070 source:/home/gabriel/concu/ConcuPark/fifos/Fifo.cpp
 	"Fifo.h"
@@ -29,8 +33,14 @@
 1415239070 /home/gabriel/concu/ConcuPark/fifos/FifoLectura.h
 	"Fifo.h"
 
-1460319840 source:/home/gabriel/concu/ConcuPark/ride/main.cpp
+1460321688 source:/home/gabriel/concu/ConcuPark/cola/src/Cola.cpp
+	"Cola.h"
+	"../../fifos/FifoLectura.h"
 	<iostream>
+
+1460320069 /home/gabriel/concu/ConcuPark/cola/include/Cola.h
+	"Runnable.h"
 	<vector>
-	"../fifos/FifoLectura.h"
+	<unistd.h>
+	<string>
 

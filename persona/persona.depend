@@ -8,3 +8,29 @@
 	<semaphore.h>
 	<unistd.h>
 
+1460319875 source:/home/gabriel/concu/ConcuPark/persona/main.cpp
+	<iostream>
+	"../fifos/FifoEscritura.h"
+
+1415239070 /home/gabriel/concu/ConcuPark/fifos/FifoEscritura.h
+	"Fifo.h"
+
+1415239070 /home/gabriel/concu/ConcuPark/fifos/Fifo.h
+	<string>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+
+1415239070 source:/home/gabriel/concu/ConcuPark/fifos/Fifo.cpp
+	"Fifo.h"
+
+1415239070 source:/home/gabriel/concu/ConcuPark/fifos/FifoEscritura.cpp
+	"FifoEscritura.h"
+
+1415239070 source:/home/gabriel/concu/ConcuPark/fifos/FifoLectura.cpp
+	"FifoLectura.h"
+
+1415239070 /home/gabriel/concu/ConcuPark/fifos/FifoLectura.h
+	"Fifo.h"
+
