@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     static const int BUFFSIZE = sizeof(getpid());
-	static const std::string ARCHIVO_FIFO = "/tmp/cola_juego";
+	static const std::string ARCHIVO_FIFO = "/tmp/juego_personas_a_cola";
 
     FifoEscritura canal ( ARCHIVO_FIFO );
 

@@ -1,46 +1,98 @@
 # depslib dependency file v1.0
-1460320668 source:/home/gabriel/concu/ConcuPark/cola/main.cpp
+1460335839 source:/home/gabriel/concu/ConcuPark/cola/main.cpp
 	<iostream>
+	"Logger.h"
 	"Cola.h"
+	"Entrada.h"
+	"Salida.h"
 
-1460321763 source:/home/gabriel/concu/ConcuPark/cola/src/Runnable.cpp
+1460332886 source:/home/gabriel/concu/ConcuPark/cola/src/Runnable.cpp
 	"Runnable.h"
 	<unistd.h>
 	<stdlib.h>
 	<stdio.h>
 
-1460319405 /home/gabriel/concu/ConcuPark/cola/include/Runnable.h
+1460332876 /home/gabriel/concu/ConcuPark/cola/include/Runnable.h
 
-1415239070 source:/home/gabriel/concu/ConcuPark/fifos/Fifo.cpp
+1460328507 source:/home/gabriel/concu/ConcuPark/fifos/Fifo.cpp
 	"Fifo.h"
+	<stdio.h>
 
-1415239070 /home/gabriel/concu/ConcuPark/fifos/Fifo.h
+1460322442 /home/gabriel/concu/ConcuPark/fifos/Fifo.h
 	<string>
 	<sys/types.h>
 	<sys/stat.h>
 	<fcntl.h>
 	<unistd.h>
 
-1415239070 source:/home/gabriel/concu/ConcuPark/fifos/FifoEscritura.cpp
+1460323310 source:/home/gabriel/concu/ConcuPark/fifos/FifoEscritura.cpp
 	"FifoEscritura.h"
+	<stdio.h>
 
-1415239070 /home/gabriel/concu/ConcuPark/fifos/FifoEscritura.h
+1460322442 /home/gabriel/concu/ConcuPark/fifos/FifoEscritura.h
 	"Fifo.h"
 
-1415239070 source:/home/gabriel/concu/ConcuPark/fifos/FifoLectura.cpp
+1460323229 source:/home/gabriel/concu/ConcuPark/fifos/FifoLectura.cpp
 	"FifoLectura.h"
+	<stdio.h>
 
-1415239070 /home/gabriel/concu/ConcuPark/fifos/FifoLectura.h
+1460322442 /home/gabriel/concu/ConcuPark/fifos/FifoLectura.h
 	"Fifo.h"
 
-1460321688 source:/home/gabriel/concu/ConcuPark/cola/src/Cola.cpp
+1460337981 source:/home/gabriel/concu/ConcuPark/cola/src/Cola.cpp
 	"Cola.h"
 	"../../fifos/FifoLectura.h"
+	"../../fifos/FifoEscritura.h"
+	"defines.h"
+	"Logger.h"
 	<iostream>
+	<fstream>
+	<string>
 
-1460320069 /home/gabriel/concu/ConcuPark/cola/include/Cola.h
+1460322442 /home/gabriel/concu/ConcuPark/cola/include/Cola.h
 	"Runnable.h"
 	<vector>
 	<unistd.h>
+	<string>
+
+1460337995 source:/home/gabriel/concu/ConcuPark/cola/src/Entrada.cpp
+	"Entrada.h"
+	"../../fifos/FifoLectura.h"
+	"../../fifos/FifoEscritura.h"
+	"defines.h"
+	"Logger.h"
+	<time.h>
+	<fstream>
+
+1460327003 /home/gabriel/concu/ConcuPark/cola/include/Entrada.h
+	"Runnable.h"
+	<string>
+	<vector>
+
+1460338029 /home/gabriel/concu/ConcuPark/cola/include/defines.h
+	<fstream>
+
+1460337039 source:/home/gabriel/concu/ConcuPark/cola/src/Logger.cpp
+	"Logger.h"
+	"defines.h"
+	<fstream>
+	<ctime>
+	"../../fifos/FifoLectura.h"
+
+1460335828 /home/gabriel/concu/ConcuPark/cola/include/Logger.h
+	<string>
+	"Runnable.h"
+	"../../fifos/FifoEscritura.h"
+
+1460337936 source:/home/gabriel/concu/ConcuPark/cola/src/Salida.cpp
+	"Salida.h"
+	"../../fifos/FifoLectura.h"
+	"defines.h"
+	"Logger.h"
+	<iostream>
+	<fstream>
+
+1460334161 /home/gabriel/concu/ConcuPark/cola/include/Salida.h
+	"Runnable.h"
 	<string>
 

@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../fifos/Fifo.cpp" />
+		<Unit filename="../fifos/Fifo.h" />
+		<Unit filename="../fifos/FifoEscritura.cpp" />
+		<Unit filename="../fifos/FifoEscritura.h" />
+		<Unit filename="../fifos/FifoLectura.cpp" />
+		<Unit filename="../fifos/FifoLectura.h" />
+		<Unit filename="include/Cola.h" />
+		<Unit filename="include/Runnable.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Cola.cpp" />
+		<Unit filename="src/Runnable.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
