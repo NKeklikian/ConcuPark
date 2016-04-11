@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1460349706 source:/home/gabriel/concu/ConcuPark/gabo/src/Fifo.cpp
+	"Fifo.h"
+	<stdio.h>
+
+1460322442 /home/gabriel/concu/ConcuPark/gabo/include/Fifo.h
+	<string>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+
+1460349704 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoEscritura.cpp
+	"FifoEscritura.h"
+	<stdio.h>
+
+1460322442 /home/gabriel/concu/ConcuPark/gabo/include/FifoEscritura.h
+	"Fifo.h"
+
+1460323229 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoLectura.cpp
+	"FifoLectura.h"
+	<stdio.h>
+
+1460322442 /home/gabriel/concu/ConcuPark/gabo/include/FifoLectura.h
+	"Fifo.h"
+
+1460349800 source:/home/gabriel/concu/ConcuPark/gabo/src/Logger.cpp
+	"Logger.h"
+	"defines.h"
+	<fstream>
+	<ctime>
+	"FifoLectura.h"
+
+1460349733 /home/gabriel/concu/ConcuPark/gabo/include/Logger.h
+	<string>
+	"Runnable.h"
+	"FifoEscritura.h"
+
+1460332876 /home/gabriel/concu/ConcuPark/gabo/include/Runnable.h
+
+1460351388 /home/gabriel/concu/ConcuPark/gabo/include/defines.h
+	"sys/signal.h"
+
+1460355524 source:/home/gabriel/concu/ConcuPark/gabo/src/Runnable.cpp
+	"Runnable.h"
+	<unistd.h>
+	<stdlib.h>
+	<stdio.h>
+	<iostream>
+
+1460355582 source:/home/gabriel/concu/ConcuPark/gabo/src/SignalHandler.cpp
+	"SignalHandler.h"
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo/include/SignalHandler.h
+	<signal.h>
+	<stdio.h>
+	<memory.h>
+	"EventHandler.h"
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo/include/EventHandler.h
+
+1460353987 source:/home/gabriel/concu/ConcuPark/gabo/persona/main.cpp
+	<iostream>
+	"Persona.h"
+
+1460355392 source:/home/gabriel/concu/ConcuPark/gabo/src/Persona.cpp
+	"Persona.h"
+	"Logger.h"
+	"defines.h"
+	"SignalHandler.h"
+
+1460351152 /home/gabriel/concu/ConcuPark/gabo/include/Persona.h
+	"Runnable.h"
+	"EventHandler.h"
+
