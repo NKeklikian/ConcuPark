@@ -1,0 +1,44 @@
+
+/---------------------- 12-04-2016 03:19:06 ----------------------/
+MAIN	7974	W.	hola
+COLA	7977	D.	Creo canal de lectura a personas
+COLA	7977	D.	Creo canal de escritura a entrada
+SALIDA	7979	D.	Creo canal de lectura a entrada
+ENTRADA	7978	D.	Creo canal de lectura a cola
+ENTRADA	7978	D.	Creo canal de escritura a salida
+PERSONA	7995	D.	Me puse en la cola del juego
+COLA	7977	D.	Entra la persona 7995 a la cola
+ENTRADA	7978	D.	Entra al juego: 7995
+PERSONA	7995	D.	Pago tanta plata
+PERSONA	7997	D.	Me puse en la cola del juego
+COLA	7977	D.	Entra la persona 7997 a la cola
+ENTRADA	7978	D.	Entra al juego: 7997
+PERSONA	7997	D.	Pago tanta plata
+PERSONA	7999	D.	Me puse en la cola del juego
+COLA	7977	D.	Entra la persona 7999 a la cola
+ENTRADA	7978	D.	Entra al juego: 7999
+PERSONA	7999	D.	Pago tanta plata
+PERSONA	8001	D.	Me puse en la cola del juego
+COLA	7977	D.	Entra la persona 8001 a la cola
+ENTRADA	7978	D.	Entra al juego: 8001
+PERSONA	8001	D.	Pago tanta plata
+PERSONA	8003	D.	Me puse en la cola del juego
+COLA	7977	D.	Entra la persona 8003 a la cola
+ENTRADA	7978	D.	Entra al juego: 8003
+PERSONA	8003	D.	Pago tanta plata
+ENTRADA	7978	D.	Se lleno el juego
+ENTRADA	7978	D.	Arranca el juego con: 7995 7997 7999 8001 8003 
+ENTRADA	7978	D.	Salen todos del juego
+SALIDA	7979	D.	Sale la persona 7995
+SALIDA	7979	D.	Sale la persona 7997
+PERSONA	7995	D.	Me voy del juego
+SALIDA	7979	D.	Sale la persona 7999
+PERSONA	7997	D.	Me voy del juego
+SALIDA	7979	D.	Sale la persona 8001
+PERSONA	7999	D.	Me voy del juego
+SALIDA	7979	D.	Sale la persona 8003
+PERSONA	8003	D.	Me voy del juego
+PERSONA	8001	D.	Me voy del juego
+COLA	7977	D.	Se cierra la cola
+ENTRADA	7978	D.	Se cierra la entrada
+SALIDA	7979	D.	Se cierra la salida

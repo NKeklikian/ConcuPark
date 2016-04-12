@@ -2,7 +2,7 @@
 #define COLA_H
 
 #include "Runnable.h"
-#include <vector>
+#include <queue>
 #include <unistd.h>
 #include <string>
 
@@ -17,7 +17,7 @@ class Cola : public Runnable
 
     private:
 
-        std::vector<pid_t> personas;
+        std::queue<pid_t> personas;
         std::string nombre;
 };
 

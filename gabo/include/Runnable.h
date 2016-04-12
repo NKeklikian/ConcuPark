@@ -1,6 +1,7 @@
 #ifndef RUNNABLE_H
 #define RUNNABLE_H
 
+#include <unistd.h>
 
 class Runnable
 {
@@ -8,7 +9,7 @@ class Runnable
         Runnable();
         virtual ~Runnable();
 
-        void run();
+        pid_t run();
     protected:
         bool child;
 

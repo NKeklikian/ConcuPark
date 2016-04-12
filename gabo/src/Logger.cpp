@@ -3,6 +3,8 @@
 #include <fstream>
 #include <ctime>
 #include "FifoLectura.h"
+#include "SIG_Trap.h"
+#include "SignalHandler.h"
 
 static Logger* instance = 0;
 
@@ -42,6 +44,7 @@ std::string Logger::timestamp(){
 }
 
 void Logger::Log(std::string name, std::string comment, LOG_MODE comment_mode){
+    // tal vez deberia hacer esto en un fork
     if(comment_mode >= mode){
         /*std::ofstream log_file(log_path.c_str(), std::ofstream::out | std::ofstream::app);
         log_file << mode_symbols[comment_mode] << comment << std::endl;
@@ -65,17 +68,22 @@ Logger* Logger::getInstance(){
 }
 
 void Logger::_run(){
+
+    // trap de sigint
+    SIG_Trap sigint_handler(SIGINT);
+    SignalHandler::getInstance()->registrarHandler(SIGINT, &sigint_handler);
+
     // esto tal vez va en la clase como variables
     static const int BUFFSIZE = sizeof(char) * 100;
     FifoLectura canal_logger ( C_LOGGER );
     canal_logger.abrir();
 
     char buffer[BUFFSIZE];
-    while(true){ // ver cuando frenar (para que cierre bien y se cierren los pipes)
+    while(sigint_handler.signalWasReceived() == 0){ // ver cuando frenar (para que cierre bien y se cierren los pipes)
         canal_logger.abrir();
         std::string mensaje = "";
         ssize_t bytes_leidos;
-        while(bytes_leidos = canal_logger.leer(static_cast<void*>(&buffer),BUFFSIZE)){
+        while((bytes_leidos = canal_logger.leer(static_cast<void*>(&buffer),BUFFSIZE)) > 0){
             mensaje = buffer;
             mensaje.resize(bytes_leidos);
             std::ofstream log_file(log_path.c_str(), std::ofstream::out | std::ofstream::app);
@@ -85,6 +93,7 @@ void Logger::_run(){
         canal_logger.cerrar();
     }
 
+    // cierro todo
     canal_logger.cerrar();
     canal_logger.eliminar();
 }

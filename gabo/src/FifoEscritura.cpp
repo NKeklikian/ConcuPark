@@ -10,7 +10,7 @@ FifoEscritura::~FifoEscritura() {
 void FifoEscritura::abrir() {
 	fd = open ( nombre.c_str(),O_WRONLY );
 	if(fd == -1){
-        perror("FifoEscritura error: ");
+        perror("FifoEscritura abrir error: ");
         // que onda? se cierra el programa?
     }
 }
@@ -18,6 +18,6 @@ void FifoEscritura::abrir() {
 ssize_t FifoEscritura::escribir(const void* buffer,const ssize_t buffsize) const {
 	ssize_t bytes_written = write ( fd,buffer,buffsize );
 	if(bytes_written == -1){
-        perror("FifoEscritura error: ");
+        perror("FifoEscritura escribir error: ");
 	}
 }

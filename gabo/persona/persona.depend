@@ -1,47 +1,50 @@
 # depslib dependency file v1.0
-1460349706 source:/home/gabriel/concu/ConcuPark/gabo/src/Fifo.cpp
+1460478399 source:/home/gabriel/concu/ConcuPark/gabo/src/Fifo.cpp
 	"Fifo.h"
 	<stdio.h>
 
-1460322442 /home/gabriel/concu/ConcuPark/gabo/include/Fifo.h
+1460435307 /home/gabriel/concu/ConcuPark/gabo/include/Fifo.h
 	<string>
 	<sys/types.h>
 	<sys/stat.h>
 	<fcntl.h>
 	<unistd.h>
 
-1460349704 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoEscritura.cpp
+1460478407 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoEscritura.cpp
 	"FifoEscritura.h"
 	<stdio.h>
 
-1460322442 /home/gabriel/concu/ConcuPark/gabo/include/FifoEscritura.h
+1460435311 /home/gabriel/concu/ConcuPark/gabo/include/FifoEscritura.h
 	"Fifo.h"
 
-1460323229 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoLectura.cpp
+1460478413 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoLectura.cpp
 	"FifoLectura.h"
 	<stdio.h>
 
-1460322442 /home/gabriel/concu/ConcuPark/gabo/include/FifoLectura.h
+1460435316 /home/gabriel/concu/ConcuPark/gabo/include/FifoLectura.h
 	"Fifo.h"
 
-1460349800 source:/home/gabriel/concu/ConcuPark/gabo/src/Logger.cpp
+1460482147 source:/home/gabriel/concu/ConcuPark/gabo/src/Logger.cpp
 	"Logger.h"
 	"defines.h"
 	<fstream>
 	<ctime>
 	"FifoLectura.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
 
-1460349733 /home/gabriel/concu/ConcuPark/gabo/include/Logger.h
+1460478169 /home/gabriel/concu/ConcuPark/gabo/include/Logger.h
 	<string>
 	"Runnable.h"
 	"FifoEscritura.h"
 
-1460332876 /home/gabriel/concu/ConcuPark/gabo/include/Runnable.h
+1460478250 /home/gabriel/concu/ConcuPark/gabo/include/Runnable.h
+	<unistd.h>
 
-1460351388 /home/gabriel/concu/ConcuPark/gabo/include/defines.h
+1460482417 /home/gabriel/concu/ConcuPark/gabo/include/defines.h
 	"sys/signal.h"
 
-1460355524 source:/home/gabriel/concu/ConcuPark/gabo/src/Runnable.cpp
+1460478237 source:/home/gabriel/concu/ConcuPark/gabo/src/Runnable.cpp
 	"Runnable.h"
 	<unistd.h>
 	<stdlib.h>
@@ -63,13 +66,19 @@
 	<iostream>
 	"Persona.h"
 
-1460355392 source:/home/gabriel/concu/ConcuPark/gabo/src/Persona.cpp
+1460484999 source:/home/gabriel/concu/ConcuPark/gabo/src/Persona.cpp
 	"Persona.h"
 	"Logger.h"
 	"defines.h"
 	"SignalHandler.h"
+	"SIG_Trap.h"
 
-1460351152 /home/gabriel/concu/ConcuPark/gabo/include/Persona.h
+1460484073 /home/gabriel/concu/ConcuPark/gabo/include/Persona.h
 	"Runnable.h"
+	"EventHandler.h"
+
+1460483250 /home/gabriel/concu/ConcuPark/gabo/include/SIG_Trap.h
+	<signal.h>
+	<assert.h>
 	"EventHandler.h"
 

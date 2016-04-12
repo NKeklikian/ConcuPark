@@ -4,7 +4,7 @@
 #include "Runnable.h"
 #include "EventHandler.h"
 
-class Persona : public Runnable, public EventHandler
+class Persona : public Runnable
 {
     public:
         Persona(int p);
@@ -12,7 +12,6 @@ class Persona : public Runnable, public EventHandler
     protected:
         virtual void _run();
 
-        virtual int handleSignal ( int signum );
     private:
         int plata;
 };

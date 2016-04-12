@@ -2,6 +2,7 @@
 #include "Logger.h"
 #include "defines.h"
 #include "SignalHandler.h"
+#include "SIG_Trap.h"
 
 Persona::Persona(int p) : plata(p)
 {
@@ -13,22 +14,15 @@ Persona::~Persona()
     //dtor
 }
 
-/// por ahora le puse esto solo para que se bloquee hasta que le llega la senial.
-/// cuando haga cosas distintas en funcion a que senial le llega, deberia tener handlers distintos
-/// o van los dos aca con un if cabeza, total son solo dos seniales posibles
-int Persona::handleSignal ( int signum ) {
-    //assert ( signum == SIGPAGAR );
-    //this->gracefulQuit = 1;
-    return 0;
-}
-
 void Persona::_run(){
-    Logger* logger = Logger::getInstance();
 
     // estan definidas en defines.h, usa SIGUSR1 y SIGUSR2 que solo los manda el usuario
-    SignalHandler::getInstance()->registrarHandler(SIGPAGAR, this);
-    SignalHandler::getInstance()->registrarHandler(SIGBAJARSE, this);
+    SIG_Trap sig_pagar(SIGPAGAR);
+    SIG_Trap sig_salir(SIGBAJARSE);
+    SignalHandler::getInstance()->registrarHandler(SIGPAGAR, &sig_pagar);
+    SignalHandler::getInstance()->registrarHandler(SIGBAJARSE, &sig_salir);
 
+    Logger* logger = Logger::getInstance();
     // por ahora no loopea la persona porque solo hay un juego
     //while(true){
         // hardcodeado porque solo hay un juego
@@ -43,11 +37,14 @@ void Persona::_run(){
         canal_a_cola.cerrar ();
 
         /// TODO: pausar hasta que me cobren
-        pause();
+        while(!sig_pagar.signalWasReceived()){
+            pause(); // cambiar pause por sigsuspend?
+        }
         logger->Log("PERSONA", "Pago tanta plata", DEBUG);
 
-        /// TODO: pausar hasta que termine el juego
-        pause();
+        while(!sig_salir.signalWasReceived()){
+            pause(); // cambiar pause por sigsuspend?
+        }
         logger->Log("PERSONA", "Me voy del juego", DEBUG);
     //}
 }

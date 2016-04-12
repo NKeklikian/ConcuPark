@@ -41,7 +41,7 @@
 		<Unit filename="../include/Logger.h" />
 		<Unit filename="../include/Persona.h" />
 		<Unit filename="../include/Runnable.h" />
-		<Unit filename="../include/SIGINT_Handler.h" />
+		<Unit filename="../include/SIG_Trap.h" />
 		<Unit filename="../include/SignalHandler.h" />
 		<Unit filename="../include/defines.h" />
 		<Unit filename="../src/Fifo.cpp" />
@@ -50,6 +50,7 @@
 		<Unit filename="../src/Logger.cpp" />
 		<Unit filename="../src/Persona.cpp" />
 		<Unit filename="../src/Runnable.cpp" />
+		<Unit filename="../src/SIG_Trap.cpp" />
 		<Unit filename="../src/SignalHandler.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>

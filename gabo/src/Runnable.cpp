@@ -24,7 +24,7 @@ Runnable::~Runnable()
     //dtor
 }
 
-void Runnable::run(){
+pid_t Runnable::run(){
     pid_t pid = fork();
     if(pid == -1){
         child = false;
@@ -35,6 +35,8 @@ void Runnable::run(){
     if(pid == 0){
         _run();
         exit(0);
+    } else {
+        return pid;
     }
     // en el padre sigo como si nada
 }

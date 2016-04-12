@@ -15,11 +15,11 @@ Juego::~Juego()
 
 void Juego::_run(){
     Cola cola("/tmp/juego");
-    cola.run();
+    pid_t cola_pid = cola.run();
 
-    Entrada entrada("/tmp/juego", 5);
-    entrada.run();
+    Entrada entrada("/tmp/juego", 5, cola_pid);
+    pid_t entrada_pid = entrada.run();
 
     Salida salida("/tmp/juego");
-    salida.run();
+    pid_t salida_pid = salida.run();
 }
