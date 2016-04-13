@@ -10,7 +10,7 @@ int main()
     logger->run();
     logger->Log("MAIN", "hola", WARNING);
 
-    Juego juego("/tmp/juego", 5);
+    Juego juego("/tmp/juego", 1);
     juego.run();
 
     return 0;

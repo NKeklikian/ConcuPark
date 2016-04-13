@@ -17,7 +17,7 @@ void Juego::_run(){
     Cola cola("/tmp/juego");
     pid_t cola_pid = cola.run();
 
-    Entrada entrada("/tmp/juego", 5, cola_pid);
+    Entrada entrada("/tmp/juego", capacidad, cola_pid);
     pid_t entrada_pid = entrada.run();
 
     Salida salida("/tmp/juego");

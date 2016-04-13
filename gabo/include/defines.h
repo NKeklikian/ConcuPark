@@ -9,6 +9,7 @@
 #define C_COLA_A_ENTRADA "_cola_a_entrada"
 #define C_LOGGER "/tmp/logger"
 #define C_SALIDA "_salida"
+#define C_COBRAR_A_PERSONA "_cobrar_a_persona"
 
 // seniales
 #define SIGPAGAR SIGUSR1

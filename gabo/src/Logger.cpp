@@ -17,9 +17,6 @@ Logger::Logger()
     mode_symbols[2] = "E.\t";
     mode_symbols[3] = "I.\t";
     mode_symbols[4] = "T.\t";
-    std::ofstream log_file(log_path.c_str(), std::ofstream::app);
-    log_file << std::endl << "/---------------------- " << timestamp() << " ----------------------/" << std::endl;
-    log_file.close();
 }
 
 Logger::~Logger()
@@ -45,11 +42,12 @@ std::string Logger::timestamp(){
 
 void Logger::Log(std::string name, std::string comment, LOG_MODE comment_mode){
     // tal vez deberia hacer esto en un fork
-    if(comment_mode >= mode){
+    pid_t pid = fork();
+    if(pid == 0 && comment_mode >= mode){
         /*std::ofstream log_file(log_path.c_str(), std::ofstream::out | std::ofstream::app);
         log_file << mode_symbols[comment_mode] << comment << std::endl;
         log_file.close();*/
-        std::string out_final = name + "\t" + std::to_string(getpid()) + "\t" + mode_symbols[comment_mode] + comment + "\n";
+        std::string out_final = name + "\t" /*+ std::to_string(getpid()) + "\t"*/ + mode_symbols[comment_mode] + comment + "\n";
 
         FifoEscritura canal_logger ( C_LOGGER );
 
@@ -57,6 +55,7 @@ void Logger::Log(std::string name, std::string comment, LOG_MODE comment_mode){
         canal_logger.escribir ( static_cast<const void*>(out_final.c_str()),out_final.length() );
 
         canal_logger.cerrar ();
+        exit(0);
     }
 }
 
@@ -68,6 +67,10 @@ Logger* Logger::getInstance(){
 }
 
 void Logger::_run(){
+
+    std::ofstream log_file(log_path.c_str(), std::ofstream::app);
+    log_file << std::endl << "/---------------------- " << timestamp() << " ----------------------/" << std::endl;
+    log_file.close();
 
     // trap de sigint
     SIG_Trap sigint_handler(SIGINT);

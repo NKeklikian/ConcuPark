@@ -1,44 +1,91 @@
 
-/---------------------- 12-04-2016 03:19:06 ----------------------/
-MAIN	7974	W.	hola
-COLA	7977	D.	Creo canal de lectura a personas
-COLA	7977	D.	Creo canal de escritura a entrada
-SALIDA	7979	D.	Creo canal de lectura a entrada
-ENTRADA	7978	D.	Creo canal de lectura a cola
-ENTRADA	7978	D.	Creo canal de escritura a salida
-PERSONA	7995	D.	Me puse en la cola del juego
-COLA	7977	D.	Entra la persona 7995 a la cola
-ENTRADA	7978	D.	Entra al juego: 7995
-PERSONA	7995	D.	Pago tanta plata
-PERSONA	7997	D.	Me puse en la cola del juego
-COLA	7977	D.	Entra la persona 7997 a la cola
-ENTRADA	7978	D.	Entra al juego: 7997
-PERSONA	7997	D.	Pago tanta plata
-PERSONA	7999	D.	Me puse en la cola del juego
-COLA	7977	D.	Entra la persona 7999 a la cola
-ENTRADA	7978	D.	Entra al juego: 7999
-PERSONA	7999	D.	Pago tanta plata
-PERSONA	8001	D.	Me puse en la cola del juego
-COLA	7977	D.	Entra la persona 8001 a la cola
-ENTRADA	7978	D.	Entra al juego: 8001
-PERSONA	8001	D.	Pago tanta plata
-PERSONA	8003	D.	Me puse en la cola del juego
-COLA	7977	D.	Entra la persona 8003 a la cola
-ENTRADA	7978	D.	Entra al juego: 8003
-PERSONA	8003	D.	Pago tanta plata
-ENTRADA	7978	D.	Se lleno el juego
-ENTRADA	7978	D.	Arranca el juego con: 7995 7997 7999 8001 8003 
-ENTRADA	7978	D.	Salen todos del juego
-SALIDA	7979	D.	Sale la persona 7995
-SALIDA	7979	D.	Sale la persona 7997
-PERSONA	7995	D.	Me voy del juego
-SALIDA	7979	D.	Sale la persona 7999
-PERSONA	7997	D.	Me voy del juego
-SALIDA	7979	D.	Sale la persona 8001
-PERSONA	7999	D.	Me voy del juego
-SALIDA	7979	D.	Sale la persona 8003
-PERSONA	8003	D.	Me voy del juego
-PERSONA	8001	D.	Me voy del juego
-COLA	7977	D.	Se cierra la cola
-ENTRADA	7978	D.	Se cierra la entrada
-SALIDA	7979	D.	Se cierra la salida
+/---------------------- 12-04-2016 11:50:16 ----------------------/
+MAIN	W.	hola
+COLA	D.	Creo canal de lectura a personas
+ENTRADA	D.	Creo canal de lectura a cola
+ENTRADA	D.	Creo canal para cobrar a personas
+ENTRADA	D.	Creo canal de escritura a salida
+COLA	D.	Creo canal de escritura a entrada
+SALIDA	D.	Creo canal de lectura a entrada
+PERSONA	D.	Tengo 50 pesos
+PERSONA	D.	Me puse en la cola del juego
+COLA	D.	Entra la persona 3758 a la cola
+PERSONA	D.	Pago 5 pesos
+ENTRADA	D.	Entra al juego: 3758
+ENTRADA	D.	Se lleno el juego
+ENTRADA	D.	Cobro 5 a 3758
+ENTRADA	D.	Arranca el juego con: 3758 
+ENTRADA	D.	Salen todos del juego
+SALIDA	D.	Sale la persona 3758
+PERSONA	D.	Tengo 45 pesos
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Pago 5 pesos
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Tengo 40 pesos
+COLA	D.	Entra la persona 3758 a la cola
+ENTRADA	D.	Cobro 5 a 3758
+PERSONA	D.	Pago 5 pesos
+ENTRADA	D.	Entra al juego: 3758
+ENTRADA	D.	Arranca el juego con: 3758 
+PERSONA	D.	Tengo 35 pesos
+ENTRADA	D.	Se lleno el juego
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Pago 5 pesos
+COLA	D.	Entra la persona 3758 a la cola
+PERSONA	D.	Me voy del juego
+COLA	D.	Entra la persona 3758 a la cola
+ENTRADA	D.	Salen todos del juego
+SALIDA	D.	Sale la persona 3758
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Pago 5 pesos
+PERSONA	D.	Tengo 30 pesos
+PERSONA	D.	Tengo 25 pesos
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Pago 5 pesos
+PERSONA	D.	Tengo 20 pesos
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Me puse en la cola del juego
+COLA	D.	Entra la persona 3758 a la cola
+COLA	D.	Entra la persona 3758 a la cola
+ENTRADA	D.	Cobro 5 a 3758
+COLA	D.	Entra la persona 3758 a la cola
+ENTRADA	D.	Entra al juego: 3758
+ENTRADA	D.	Arranca el juego con: 3758 
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Tengo 15 pesos
+ENTRADA	D.	Se lleno el juego
+COLA	D.	Entra la persona 3758 a la cola
+PERSONA	D.	Pago 5 pesos
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Pago 5 pesos
+ENTRADA	D.	Salen todos del juego
+SALIDA	D.	Sale la persona 3758
+ENTRADA	D.	Arranca el juego con: 3758 
+PERSONA	D.	Tengo 5 pesos
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Pago 5 pesos
+PERSONA	D.	Me voy del juego
+PERSONA	D.	Me puse en la cola del juego
+PERSONA	D.	Pago 5 pesos
+ENTRADA	D.	Se lleno el juego
+PERSONA	D.	Me voy del juego
+COLA	D.	Entra la persona 3758 a la cola
+PERSONA	D.	Tengo 10 pesos
+COLA	D.	Entra la persona 3758 a la cola
+ENTRADA	D.	Entra al juego: 3758
+PERSONA	D.	Me voy del juego
+ENTRADA	D.	Cobro 5 a 3758
+ENTRADA	D.	Salen todos del juego
+SALIDA	D.	Sale la persona 3758
+COLA	D.	Se cierra la cola
+ENTRADA	D.	Cobro 3758 a 3758
+ENTRADA	D.	Se lleno el juego
+ENTRADA	D.	Entra al juego: 3758
+ENTRADA	D.	Arranca el juego con: 3758 
+SALIDA	D.	Se cierra la salida
+ENTRADA	D.	Salen todos del juego
+ENTRADA	D.	Se cierra la entrada
