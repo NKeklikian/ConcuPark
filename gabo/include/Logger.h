@@ -36,6 +36,7 @@ class Logger : public Runnable
         std::string log_path;
         std::string mode_symbols[LOG_MODES];
         std::string timestamp();
+        std::string timeHMSmu();
 };
 
 #endif // LOGGER_H

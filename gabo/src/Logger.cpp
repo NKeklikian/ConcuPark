@@ -2,6 +2,7 @@
 #include "defines.h"
 #include <fstream>
 #include <ctime>
+#include <sys/time.h>
 #include "FifoLectura.h"
 #include "SIG_Trap.h"
 #include "SignalHandler.h"
@@ -34,20 +35,37 @@ std::string Logger::timestamp(){
     time (&rawtime);
     timeinfo = localtime(&rawtime);
 
-    strftime(buffer,80,"%d-%m-%Y %I:%M:%S",timeinfo);
+    strftime(buffer,80,"%d-%m-%Y %H:%M:%S",timeinfo);
     std::string str(buffer);
 
     return str;
 }
 
+std::string Logger::timeHMSmu(){
+    struct timeval tv;
+    time_t nowtime;
+    struct tm *nowtm;
+    char tmbuf[64], buf[64];
+
+    gettimeofday(&tv, NULL);
+    nowtime = tv.tv_sec;
+    nowtm = localtime(&nowtime);
+    strftime(tmbuf, sizeof tmbuf, "%H:%M:%S", nowtm);
+    snprintf(buf, sizeof(buf), "%s.%06d", tmbuf, tv.tv_usec);
+    std::string str(buf);
+    return str;
+}
+
 void Logger::Log(std::string name, std::string comment, LOG_MODE comment_mode){
     // tal vez deberia hacer esto en un fork
-    pid_t pid = fork();
-    if(pid == 0 && comment_mode >= mode){
+    if(comment_mode >= mode){
         /*std::ofstream log_file(log_path.c_str(), std::ofstream::out | std::ofstream::app);
         log_file << mode_symbols[comment_mode] << comment << std::endl;
         log_file.close();*/
-        std::string out_final = name + "\t" /*+ std::to_string(getpid()) + "\t"*/ + mode_symbols[comment_mode] + comment + "\n";
+        std::string out_final = this->timeHMSmu() + "\t" +
+                                name + "\t" +
+                                std::to_string(getpid()) + "\t" +
+                                mode_symbols[comment_mode] + comment + "\n";
 
         FifoEscritura canal_logger ( C_LOGGER );
 
@@ -55,7 +73,6 @@ void Logger::Log(std::string name, std::string comment, LOG_MODE comment_mode){
         canal_logger.escribir ( static_cast<const void*>(out_final.c_str()),out_final.length() );
 
         canal_logger.cerrar ();
-        exit(0);
     }
 }
 

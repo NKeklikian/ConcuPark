@@ -40,7 +40,6 @@ void Entrada::_run(){
 
         /// solo arranco si estoy lleno de gente (habria que poner un timer)
         while(sigint_handler.signalWasReceived() == 0 && personas.size() < capacidad){
-            //l->Log("ENTRADA", "Abro canal de lectura a cola", DEBUG);
             kill(cola_pid, SIGPASARAENTRADA);
             canal_escuchar_de_cola.abrir();
             ssize_t bytes_leidos = canal_escuchar_de_cola.leer(static_cast<void*>(&pid_leido),sizeof(pid_leido));
@@ -58,7 +57,6 @@ void Entrada::_run(){
                 canal_cobrar_a_persona.cerrar();
                 // la meto al juego
                 personas.push_back(pid_leido);
-
                 intermedio = "Entra al juego: " + std::to_string(pid_leido);
                 l->Log("ENTRADA", intermedio, DEBUG);
             }
@@ -74,6 +72,7 @@ void Entrada::_run(){
                 intermedio += std::to_string(personas[i]) + " ";
             }
             l->Log("ENTRADA", intermedio, DEBUG);
+
             // simulo la duracion del juego
             sleep(10);
 
