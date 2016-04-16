@@ -13,7 +13,7 @@ int main()
 {
     Logger* logger = Logger::getInstance();
     pid_t logger_pid = logger->run();
-    logger->Log("MAIN", "Empezando simulacion", WARNING);
+    logger->Log("MAIN", "Empezando simulacion", DEBUG);
 
     // crear juegos
     int cant_juegos = 1; /// HARDCODEO
@@ -25,7 +25,7 @@ int main()
         nom_juegos.push_back(nom_juego);
         costo_juegos.push_back(5); /// costo esta hardcodeado aca
 
-        Juego juego(nom_juego, 1); ///capacidad esta hardcodeada aca
+        Juego juego(nom_juego, 2); ///capacidad esta hardcodeada aca
         pid_t juego_pid = juego.run();
         juegos.push_back(juego_pid);
     }
@@ -54,8 +54,8 @@ int main()
         kill(juegos[juegos.size()-1], SIGINT);
         juegos.pop_back();
     }
-    /// ver que hacer aca, como al cerrarse los juegos loggean, si se cierra el logger antes se caga todo
-    /// se pueden sacar los logs al cerrarse los juegos (solucion facil y pajera, aunque si quedo algun log flotando caga todo)
+    /// ver que hacer aca. como al cerrarse los juegos loggean, si se cierra el logger antes se caga todo.
+    /// se pueden sacar los logs al cerrarse los juegos (solucion facil y pajera, aunque si quedo algun log flotando caga todo).
     /// o sincronizar aca de alguna manera
     sleep(5);
     kill(logger_pid, SIGINT);

@@ -1,42 +1,39 @@
 
-/---------------------- 15-04-2016 20:07:23 ----------------------/
-20:07:23.231637	MAIN	7616	W.	Empezando simulacion
-20:07:23.233266	JUEGO	7618	D.	Creo la cola
-20:07:23.233756	PERSONA	7619	D.	Tengo 5 pesos
-20:07:23.234091	PERSONA	7620	D.	Tengo 5 pesos
-20:07:23.234121	JUEGO	7618	D.	Creo la entrada
-20:07:23.234386	COLA	7621	D.	Creo canal de lectura a personas
-20:07:23.234608	JUEGO	7618	D.	Creo la salida
-20:07:23.234630	COLA	7621	D.	Creo canal de escritura a entrada
-20:07:23.235162	SALIDA	7623	D.	Creo canal de lectura a entrada
-20:07:23.235194	ENTRADA	7622	D.	Creo canal de lectura a cola
-20:07:23.235465	ENTRADA	7622	D.	Creo canal de escritura a salida
-20:07:23.235707	ENTRADA	7622	D.	Creo canal para cobrar a personas
-20:07:23.235897	PERSONA	7620	D.	Me puse en la cola del juego
-20:07:23.235953	COLA	7621	D.	Entra la persona 7620 a la cola
-20:07:23.236178	COLA	7621	D.	Paso la persona 7620 a la entrada
-20:07:23.236414	ENTRADA	7622	D.	Cobro 5 a 7620
-20:07:23.236432	PERSONA	7620	D.	Pago 5 pesos
-20:07:23.236623	ENTRADA	7622	D.	Entra al juego: 7620
-20:07:23.236772	ENTRADA	7622	D.	Se lleno el juego
-20:07:23.236972	PERSONA	7619	D.	Me puse en la cola del juego
-20:07:23.236982	COLA	7621	D.	Entra la persona 7619 a la cola
-20:07:23.236949	ENTRADA	7622	D.	Arranca el juego con: 7620 
-20:07:33.237327	ENTRADA	7622	D.	Salen todos del juego
-20:07:33.237990	SALIDA	7623	D.	Sale la persona 7620
-20:07:33.238232	PERSONA	7620	D.	Me voy del juego
-20:07:33.238389	PERSONA	7620	D.	Tengo 0 pesos
-20:07:33.239188	COLA	7621	D.	Paso la persona 7619 a la entrada
-20:07:33.239613	PERSONA	7619	D.	Pago 5 pesos
-20:07:33.239604	ENTRADA	7622	D.	Cobro 5 a 7619
-20:07:33.239879	ENTRADA	7622	D.	Entra al juego: 7619
-20:07:33.240045	ENTRADA	7622	D.	Se lleno el juego
-20:07:33.240197	ENTRADA	7622	D.	Arranca el juego con: 7619 
-20:07:43.240611	ENTRADA	7622	D.	Salen todos del juego
-20:07:43.241263	SALIDA	7623	D.	Sale la persona 7619
-20:07:43.241596	PERSONA	7619	D.	Me voy del juego
-20:07:43.241807	PERSONA	7619	D.	Tengo 0 pesos
-20:07:43.243109	JUEGO	7618	D.	Cierro el juego y todas sus estructuras
-20:07:43.243612	COLA	7621	D.	Se cierra la cola
-20:07:43.243755	ENTRADA	7622	D.	Se cierra la entrada
-20:07:43.244843	SALIDA	7623	D.	Se cierra la salida
+/---------------------- 16-04-2016 20:26:28 ----------------------/
+20:26:28.536449	MAIN	3814	D.	Empezando simulacion
+20:26:28.538192	JUEGO	3816	D.	Creo la cola
+20:26:28.538882	JUEGO	3816	D.	Creo la entrada
+20:26:28.538849	PERSONA	3817	D.	Tengo 5 pesos
+20:26:28.538918	PERSONA	3818	D.	Tengo 5 pesos
+20:26:28.539069	COLA	3819	D.	Creo canal de lectura a personas
+20:26:28.539614	JUEGO	3816	D.	Creo la salida
+20:26:28.539605	COLA	3819	D.	Creo canal de escritura a entrada
+20:26:28.540423	ENTRADA	3820	D.	Creo canal de lectura a cola
+20:26:28.540996	ENTRADA	3820	D.	Creo canal de escritura a salida
+20:26:28.540511	SALIDA	3821	D.	Creo canal de lectura a entrada
+20:26:28.541697	COLA	3819	D.	Entra la persona 3817 a la cola
+20:26:28.541736	PERSONA	3818	D.	Me puse en la cola del juego /tmp/juego1
+20:26:28.541707	PERSONA	3817	D.	Me puse en la cola del juego /tmp/juego1
+20:26:28.541869	COLA	3819	D.	Entra la persona 3818 a la cola
+20:26:28.541607	ENTRADA	3820	D.	Creo canal para cobrar a personas
+20:26:28.542352	COLA	3819	D.	Paso la persona 3817 a la entrada
+20:26:28.542549	PERSONA	3817	D.	Pago 5 pesos al juego /tmp/juego1
+20:26:28.542553	ENTRADA	3820	D.	Cobro 5 a 3817
+20:26:28.542771	ENTRADA	3820	D.	Entra al juego: 3817
+20:26:28.543119	COLA	3819	D.	Paso la persona 3818 a la entrada
+20:26:28.543326	PERSONA	3818	D.	Pago 5 pesos al juego /tmp/juego1
+20:26:28.543336	ENTRADA	3820	D.	Cobro 5 a 3818
+20:26:28.543533	ENTRADA	3820	D.	Entra al juego: 3818
+20:26:28.543674	ENTRADA	3820	D.	Se lleno el juego
+20:26:28.543843	ENTRADA	3820	D.	Arranca el juego con: 3817 3818 
+20:26:38.544126	ENTRADA	3820	D.	Salen todos del juego
+20:26:38.544690	SALIDA	3821	D.	Sale la persona 3817
+20:26:38.544866	SALIDA	3821	D.	Sale la persona 3818
+20:26:38.545031	PERSONA	3817	D.	Me voy del juego /tmp/juego1
+20:26:38.545159	PERSONA	3817	D.	Me voy del parque, tengo 0 pesos
+20:26:38.545279	PERSONA	3818	D.	Me voy del juego /tmp/juego1
+20:26:38.545447	PERSONA	3818	D.	Me voy del parque, tengo 0 pesos
+20:26:38.546321	JUEGO	3816	D.	Cierro el juego y todas sus estructuras
+20:26:38.546674	COLA	3819	D.	Se cierra la cola
+20:26:38.547520	SALIDA	3821	D.	Se cierra la salida
+20:26:38.547519	ENTRADA	3820	D.	Se cierra la entrada

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1460759875 source:/home/gabriel/concu/ConcuPark/gabo/main.cpp
+1460848328 source:/home/gabriel/concu/ConcuPark/gabo/main.cpp
 	<iostream>
 	<vector>
 	"Logger.h"
@@ -38,7 +38,7 @@
 
 1410147822 /home/gabriel/concu/ConcuPark/gabo/include/EventHandler.h
 
-1460761049 source:/home/gabriel/concu/ConcuPark/gabo/src/Cola.cpp
+1460849168 source:/home/gabriel/concu/ConcuPark/gabo/src/Cola.cpp
 	"Cola.h"
 	"FifoLectura.h"
 	"FifoEscritura.h"
@@ -73,7 +73,7 @@
 	<assert.h>
 	"EventHandler.h"
 
-1460761302 source:/home/gabriel/concu/ConcuPark/gabo/src/Entrada.cpp
+1460845649 source:/home/gabriel/concu/ConcuPark/gabo/src/Entrada.cpp
 	"Entrada.h"
 	"FifoLectura.h"
 	"FifoEscritura.h"
@@ -147,4 +147,12 @@
 
 1460355582 source:/home/gabriel/concu/ConcuPark/gabo/src/SignalHandler.cpp
 	"SignalHandler.h"
+
+1460843660 source:/home/gabriel/concu/ConcuPark/gabo/src/Persona.cpp
+	"Persona.h"
+	"Logger.h"
+	"defines.h"
+	"SignalHandler.h"
+	"SIG_Trap.h"
+	<random>
 

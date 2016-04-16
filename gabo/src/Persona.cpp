@@ -47,7 +47,8 @@ void Persona::_run(){
         canal_a_cola.abrir();
         pid_t pid = getpid();
         canal_a_cola.escribir ( static_cast<const void*>(&pid),sizeof(pid) );
-        logger->Log("PERSONA", "Me puse en la cola del juego", DEBUG);
+        intermedio = "Me puse en la cola del juego " + nombre;
+        logger->Log("PERSONA", intermedio, DEBUG);
         canal_a_cola.cerrar();
 
         /// TODO: pausar hasta que me cobren (REVISAR)
@@ -63,7 +64,7 @@ void Persona::_run(){
         canal_a_entrada.escribir(static_cast<const void*>(&pagar),sizeof(pagar)); // ver bytes escritos
         canal_a_entrada.cerrar();
         plata -= pagar;
-        intermedio = "Pago " + std::to_string(pagar) + " pesos";
+        intermedio = "Pago " + std::to_string(pagar) + " pesos al juego " + nombre;
         logger->Log("PERSONA", intermedio, DEBUG);
 
         // espero a que me notifiquen que termino el juego y puedo salir
@@ -71,8 +72,9 @@ void Persona::_run(){
             pause(); // cambiar pause por sigsuspend?
         }
         sig_salir.reset();
-        logger->Log("PERSONA", "Me voy del juego", DEBUG);
+        intermedio = "Me voy del juego " + nombre;
+        logger->Log("PERSONA", intermedio, DEBUG);
     }
-    std::string intermedio = "Tengo " + std::to_string(plata) + " pesos";
+    std::string intermedio = "Me voy del parque, tengo " + std::to_string(plata) + " pesos";
     logger->Log("PERSONA", intermedio, DEBUG);
 }

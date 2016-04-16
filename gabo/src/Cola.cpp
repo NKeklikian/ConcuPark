@@ -37,18 +37,22 @@ void Cola::_run(){
     FifoEscritura canal_escribir_a_entrada( nombre + C_COLA_A_ENTRADA );
 
     pid_t pid_leido;
+    bool queda_gente_para_meter = false;
     while(sigint_handler.signalWasReceived() == 0){ // ver cuando frenar (para que cierre bien y se cierren los pipes)
-        canal_escuchar_de_personas.abrir(); /// ver si en el prox paso deje de leer pq se acabo la gente o se lleno la capacidad
+        if(!queda_gente_para_meter)
+            canal_escuchar_de_personas.abrir();
         // basicamente leo mientras haya gente queriendo entrar y no necesito pasarle gente a la entrada
         // si la entrada necesita gente me ocupo de eso primero
         // esto es para que la "cola" se mantenga en memoria y no sea el fifo en si
         // porque si hay muchisima gente se podria llenar el fifo y ahi se pierde el orden de llegada
-        while(/*!(personas.size() > 0 && sig_pasar_a_entrada.signalWasReceived()) &&*/ canal_escuchar_de_personas.leer(static_cast<void*>(&pid_leido),sizeof(pid_t)) > 0){
+        while(!(personas.size() > 0 && sig_pasar_a_entrada.signalWasReceived()) &&
+                (queda_gente_para_meter = canal_escuchar_de_personas.leer(static_cast<void*>(&pid_leido),sizeof(pid_t)) > 0)){
             personas.push(pid_leido);
             std::string intermedio = "Entra la persona " + std::to_string(pid_leido) + " a la cola";
             l->Log("COLA", intermedio, DEBUG);
         }
-        canal_escuchar_de_personas.cerrar();
+        if(!queda_gente_para_meter)
+            canal_escuchar_de_personas.cerrar();
 
         // si frene porque tenia que pasarle gente a la entrada, hago eso
         if(sig_pasar_a_entrada.signalWasReceived() && personas.size() > 0){

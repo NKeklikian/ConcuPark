@@ -22,7 +22,9 @@ void Entrada::_run(){
 
     // trap de SIGINT
     SIG_Trap sigint_handler(SIGINT);
+    SIG_Trap sigalrm_handler(SIGALRM);
     SignalHandler::getInstance()->registrarHandler(SIGINT, &sigint_handler);
+    SignalHandler::getInstance()->registrarHandler(SIGALRM, &sigalrm_handler);
 
     Logger *l = Logger::getInstance();
 
@@ -38,8 +40,8 @@ void Entrada::_run(){
     while(sigint_handler.signalWasReceived() == 0){
         pid_t pid_leido;
 
-        /// solo arranco si estoy lleno de gente (habria que poner un timer)
-        while(sigint_handler.signalWasReceived() == 0 && personas.size() < capacidad){
+        // solo arranco si estoy lleno de gente o se acaba el timer
+        while(sigint_handler.signalWasReceived() == 0 && personas.size() < capacidad && sigalrm_handler.signalWasReceived() == 0){
             kill(cola_pid, SIGPASARAENTRADA);
             canal_escuchar_de_cola.abrir();
             ssize_t bytes_leidos = canal_escuchar_de_cola.leer(static_cast<void*>(&pid_leido),sizeof(pid_leido));
@@ -61,12 +63,22 @@ void Entrada::_run(){
                 l->Log("ENTRADA", intermedio, DEBUG);
             }
             canal_escuchar_de_cola.cerrar();
+
+            // desde que llega el primero empiezo el timer
+            if(personas.size() == 1){
+                alarm(5);
+            }
         }
 
         /// TODO: o me llene de gente (o paso el tiempo ESTO FALTA), va a empezar el juego
-        if(personas.size() >= capacidad){
-            l->Log("ENTRADA", "Se lleno el juego", DEBUG);
-
+         if(!sigint_handler.signalWasReceived()){
+            if(sigalrm_handler.signalWasReceived()){
+                l->Log("ENTRADA", "Se acabo el tiempo de espera", DEBUG);
+                sigalrm_handler.reset();
+            } else if(personas.size() == capacidad){
+                l->Log("ENTRADA", "Se lleno el juego", DEBUG);
+            }
+            alarm(0); // apago la alarma
             std::string intermedio = "Arranca el juego con: ";
             for(int i = 0; i < personas.size(); ++i){
                 intermedio += std::to_string(personas[i]) + " ";
@@ -94,4 +106,5 @@ void Entrada::_run(){
     canal_escuchar_de_cola.eliminar();
     canal_cobrar_a_persona.cerrar();
     canal_cobrar_a_persona.eliminar();
+    //SignalHandler::getInstance()->destruir();
 }
