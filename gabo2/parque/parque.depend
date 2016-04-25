@@ -156,7 +156,7 @@
 	"SIG_Trap.h"
 	<random>
 
-1461610574 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
+1461612056 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
 	<iostream>
 	<vector>
 	<sys/wait.h>
@@ -172,7 +172,7 @@
 	"Runnable.h"
 	"FifoEscritura.h"
 
-1460478250 /home/gabriel/concu/ConcuPark/gabo2/include/Runnable.h
+1461612666 /home/gabriel/concu/ConcuPark/gabo2/include/Runnable.h
 	<unistd.h>
 
 1460435311 /home/gabriel/concu/ConcuPark/gabo2/include/FifoEscritura.h
@@ -185,11 +185,12 @@
 	<fcntl.h>
 	<unistd.h>
 
-1460478169 /home/gabriel/concu/ConcuPark/gabo2/include/Juego.h
-	"Runnable.h"
+1461613063 /home/gabriel/concu/ConcuPark/gabo2/include/Juego.h
 	<string>
+	"Runnable.h"
+	"Semaforo.h"
 
-1460756766 /home/gabriel/concu/ConcuPark/gabo2/include/Persona.h
+1461613159 /home/gabriel/concu/ConcuPark/gabo2/include/Persona.h
 	"Runnable.h"
 	"EventHandler.h"
 	<vector>
@@ -260,19 +261,18 @@
 	"FifoLectura.h"
 	<stdio.h>
 
-1461611299 source:/home/gabriel/concu/ConcuPark/gabo2/src/Juego.cpp
+1461613259 source:/home/gabriel/concu/ConcuPark/gabo2/src/Juego.cpp
 	"Juego.h"
 	"SIG_Trap.h"
 	"SignalHandler.h"
 	"Logger.h"
-	"Semaforo.h"
 	"defines.h"
 
 1460478170 /home/gabriel/concu/ConcuPark/gabo2/include/Salida.h
 	"Runnable.h"
 	<string>
 
-1461603888 source:/home/gabriel/concu/ConcuPark/gabo2/src/Logger.cpp
+1461611688 source:/home/gabriel/concu/ConcuPark/gabo2/src/Logger.cpp
 	"Logger.h"
 	<fstream>
 	<ctime>
@@ -281,7 +281,7 @@
 	"string.h"
 	"LockFile.h"
 
-1461611317 source:/home/gabriel/concu/ConcuPark/gabo2/src/Persona.cpp
+1461613172 source:/home/gabriel/concu/ConcuPark/gabo2/src/Persona.cpp
 	"Persona.h"
 	"Logger.h"
 	"defines.h"
@@ -290,12 +290,12 @@
 	"Semaforo.h"
 	<random>
 
-1460478237 source:/home/gabriel/concu/ConcuPark/gabo2/src/Runnable.cpp
-	"Runnable.h"
+1461613521 source:/home/gabriel/concu/ConcuPark/gabo2/src/Runnable.cpp
 	<unistd.h>
 	<stdlib.h>
 	<stdio.h>
-	<iostream>
+	"Runnable.h"
+	"LockFile.h"
 
 1461601780 source:/home/gabriel/concu/ConcuPark/gabo2/src/Salida.cpp
 	"Salida.h"
@@ -319,7 +319,7 @@
 	<sys/types.h>
 	<string>
 
-1461611109 source:/home/gabriel/concu/ConcuPark/gabo2/src/LockFile.cpp
+1461612780 source:/home/gabriel/concu/ConcuPark/gabo2/src/LockFile.cpp
 	"LockFile.h"
 
 1461611095 /home/gabriel/concu/ConcuPark/gabo2/include/LockFile.h

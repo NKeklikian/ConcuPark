@@ -2,10 +2,13 @@
 #include "SIG_Trap.h"
 #include "SignalHandler.h"
 #include "Logger.h"
-#include "Semaforo.h"
 #include "defines.h"
 
-Juego::Juego(std::string n, int cap) : nombre(n), capacidad(cap)
+Juego::Juego(std::string n, int cap) : nombre(n), capacidad(cap),
+                                        sem_entrada(this->nombre, SEM_ENTRADA, 0),
+                                        sem_cobrar(this->nombre, SEM_COBRAR, 0),
+                                        sem_salida(this->nombre, SEM_SALIDA, 0),
+                                        sem_salir(this->nombre, SEM_SALIR, 0)
 {
     //ctor
 }
@@ -15,24 +18,25 @@ Juego::~Juego()
     //dtor
 }
 
-void Juego::_run(){
+void Juego::init(){
+    Logger::log("JUEGO", "Creando estructuras del juego", DEBUG);
 
     // cada juego crea un archivo temporal que lo identifica (para la creacion de semaforos)
     close ( open ( this->nombre.c_str(),O_CREAT,0777 ) );
 
+    sem_entrada.crear();
+    sem_cobrar.crear();
+    sem_salida.crear();
+    sem_salir.crear();
+}
+
+void Juego::_run(){
+
+    // los traps no los pongo en el init porque corre en el padre
     SIG_Trap sigint_handler(SIGINT);
     SIG_Trap sigalrm_handler(SIGALRM);
     SignalHandler::getInstance()->registrarHandler(SIGINT, &sigint_handler);
     SignalHandler::getInstance()->registrarHandler(SIGALRM, &sigalrm_handler);
-
-    Semaforo sem_entrada(this->nombre, SEM_ENTRADA, 0);
-    sem_entrada.crear();
-    Semaforo sem_cobrar(this->nombre, SEM_COBRAR, 0);
-    sem_cobrar.crear();
-    Semaforo sem_salida(this->nombre, SEM_SALIDA, 0);
-    sem_salida.crear();
-    Semaforo sem_salir(this->nombre, SEM_SALIR, 0);
-    sem_salir.crear();
 
     int gente = 0;
     while(!sigint_handler.signalWasReceived()){

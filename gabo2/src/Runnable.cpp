@@ -1,22 +1,12 @@
-#include "Runnable.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <iostream>
+#include "Runnable.h"
+#include "LockFile.h"
 
 Runnable::Runnable()
 {
-    /// me gustaba mas en el constructor esto, pero no se porque se llamaba dos veces en el hijo
-    /// entonces el hijo generaba otro hijo
-    /*pid_t pid = fork();
-    child = (pid == 0);
-    if(pid == -1){
-        child = false;
-        perror("Runnable error: ");
-    }
-    std::cout << "constructor: " << getpid() << ": " << pid << std::endl;*/
-    // se puede hacer que directo no haya run publica, y se llama a _run en el constructor
-    // entonces en el padre solo hay que crear el objeto
+
 }
 
 Runnable::~Runnable()
@@ -25,6 +15,14 @@ Runnable::~Runnable()
 }
 
 pid_t Runnable::run(){
+    // esto se asegura que al crear un runnable se inicializan sus estructuras
+    /// podemos asumir que no existe un archivo con el nombre 'runnableTempLockFile' (sino cambiar, pq al final lo borro)
+    LockFile lock("runnableTempLockFile");
+    lock.tomarLock();
+    this->init();
+    lock.liberarLock();
+    unlink("runnableTempLockFile");
+
     pid_t pid = fork();
     if(pid == -1){
         child = false;

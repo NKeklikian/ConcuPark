@@ -34,7 +34,7 @@ int main()
 
     // crear personas
     Logger::log("MAIN", "Creo personas", DEBUG);
-    int cant_personas = 1; /// HARDCODEO
+    int cant_personas = 2; /// HARDCODEO
     vector<pid_t> personas;
     for(int i = 0; i < cant_personas; ++i){
         Persona persona(5); /// aca esta hardcodeada la plata

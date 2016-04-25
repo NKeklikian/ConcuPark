@@ -1,8 +1,9 @@
 #ifndef JUEGO_H
 #define JUEGO_H
 
-#include "Runnable.h"
 #include <string>
+#include "Runnable.h"
+#include "Semaforo.h"
 
 class Juego : public Runnable
 {
@@ -15,6 +16,13 @@ class Juego : public Runnable
 
         std::string nombre;
         int capacidad;
+
+        Semaforo sem_entrada;
+        Semaforo sem_cobrar;
+        Semaforo sem_salida;
+        Semaforo sem_salir;
+
+        void init();
 };
 
 #endif // JUEGO_H

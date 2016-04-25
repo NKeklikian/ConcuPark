@@ -19,6 +19,8 @@ class Persona : public Runnable
         int plata;
         std::vector<std::string> nom_juegos;
         std::vector<int> costo_juegos;
+
+        void init();
 };
 
 #endif // PERSONA_H

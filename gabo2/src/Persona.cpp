@@ -23,6 +23,9 @@ void Persona::loadInfoParque(std::vector<std::string> &n_juegos, std::vector<int
     }
 }
 
+void Persona::init(){
+}
+
 void Persona::_run(){
 
     Logger* logger = Logger::getInstance();
@@ -58,8 +61,9 @@ void Persona::_run(){
         // espero a que termine el juego
         Logger::log("PERSONA", "Espero a que termine el juego", DEBUG);
         sem_salir.p();
-        Logger::log("PERSONA", "Me voy del juego " + nombre, DEBUG);
+        Logger::log("PERSONA", "Paso a la salida", DEBUG);
         // aviso a la salida que me fui
+        Logger::log("PERSONA", "Me voy del juego " + nombre, DEBUG);
         sem_salida.v();
     }
     std::string intermedio = "Me voy del parque, tengo " + std::to_string(plata) + " pesos";

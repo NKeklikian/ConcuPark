@@ -14,6 +14,7 @@ class Runnable
         bool child;
 
         virtual void _run() = 0;
+        virtual void init() = 0;
     private:
 };
 
