@@ -1,0 +1,340 @@
+# depslib dependency file v1.0
+1460848328 source:/home/gabriel/concu/ConcuPark/gabo/main.cpp
+	<iostream>
+	<vector>
+	"Logger.h"
+	"Juego.h"
+	"Persona.h"
+	<sys/wait.h>
+	<sys/types.h>
+
+1460742746 /home/gabriel/concu/ConcuPark/gabo/include/Logger.h
+	<string>
+	"Runnable.h"
+	"FifoEscritura.h"
+
+1460478250 /home/gabriel/concu/ConcuPark/gabo/include/Runnable.h
+	<unistd.h>
+
+1460435311 /home/gabriel/concu/ConcuPark/gabo/include/FifoEscritura.h
+	"Fifo.h"
+
+1460435307 /home/gabriel/concu/ConcuPark/gabo/include/Fifo.h
+	<string>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+
+1460478169 /home/gabriel/concu/ConcuPark/gabo/include/Juego.h
+	"Runnable.h"
+	<string>
+
+1460756766 /home/gabriel/concu/ConcuPark/gabo/include/Persona.h
+	"Runnable.h"
+	"EventHandler.h"
+	<vector>
+	<string>
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo/include/EventHandler.h
+
+1460849168 source:/home/gabriel/concu/ConcuPark/gabo/src/Cola.cpp
+	"Cola.h"
+	"FifoLectura.h"
+	"FifoEscritura.h"
+	"defines.h"
+	"Logger.h"
+	"SignalHandler.h"
+	"SIG_Trap.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1460482687 /home/gabriel/concu/ConcuPark/gabo/include/Cola.h
+	"Runnable.h"
+	<queue>
+	<unistd.h>
+	<string>
+
+1460435316 /home/gabriel/concu/ConcuPark/gabo/include/FifoLectura.h
+	"Fifo.h"
+
+1460761283 /home/gabriel/concu/ConcuPark/gabo/include/defines.h
+	"sys/signal.h"
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo/include/SignalHandler.h
+	<signal.h>
+	<stdio.h>
+	<memory.h>
+	"EventHandler.h"
+
+1460483250 /home/gabriel/concu/ConcuPark/gabo/include/SIG_Trap.h
+	<signal.h>
+	<assert.h>
+	"EventHandler.h"
+
+1460845649 source:/home/gabriel/concu/ConcuPark/gabo/src/Entrada.cpp
+	"Entrada.h"
+	"FifoLectura.h"
+	"FifoEscritura.h"
+	"defines.h"
+	"Logger.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	<time.h>
+	<fstream>
+
+1460482972 /home/gabriel/concu/ConcuPark/gabo/include/Entrada.h
+	"Runnable.h"
+	<unistd.h>
+	<string>
+	<vector>
+
+1460478399 source:/home/gabriel/concu/ConcuPark/gabo/src/Fifo.cpp
+	"Fifo.h"
+	<stdio.h>
+
+1460478407 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoEscritura.cpp
+	"FifoEscritura.h"
+	<stdio.h>
+
+1460478413 source:/home/gabriel/concu/ConcuPark/gabo/src/FifoLectura.cpp
+	"FifoLectura.h"
+	<stdio.h>
+
+1460757822 source:/home/gabriel/concu/ConcuPark/gabo/src/Juego.cpp
+	"Juego.h"
+	"Cola.h"
+	"Entrada.h"
+	"Salida.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	"Logger.h"
+
+1460478170 /home/gabriel/concu/ConcuPark/gabo/include/Salida.h
+	"Runnable.h"
+	<string>
+
+1460755353 source:/home/gabriel/concu/ConcuPark/gabo/src/Logger.cpp
+	"Logger.h"
+	"defines.h"
+	<fstream>
+	<ctime>
+	<sys/time.h>
+	"FifoLectura.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+
+1460478237 source:/home/gabriel/concu/ConcuPark/gabo/src/Runnable.cpp
+	"Runnable.h"
+	<unistd.h>
+	<stdlib.h>
+	<stdio.h>
+	<iostream>
+
+1460759633 source:/home/gabriel/concu/ConcuPark/gabo/src/Salida.cpp
+	"Salida.h"
+	"FifoLectura.h"
+	"defines.h"
+	"Logger.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	<iostream>
+	<fstream>
+
+1460483289 source:/home/gabriel/concu/ConcuPark/gabo/src/SIG_Trap.cpp
+	"SIG_Trap.h"
+
+1460355582 source:/home/gabriel/concu/ConcuPark/gabo/src/SignalHandler.cpp
+	"SignalHandler.h"
+
+1460843660 source:/home/gabriel/concu/ConcuPark/gabo/src/Persona.cpp
+	"Persona.h"
+	"Logger.h"
+	"defines.h"
+	"SignalHandler.h"
+	"SIG_Trap.h"
+	<random>
+
+1461610574 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
+	<iostream>
+	<vector>
+	<sys/wait.h>
+	<sys/types.h>
+	<unistd.h>
+	"Juego.h"
+	"Persona.h"
+	"Semaforo.h"
+	"Logger.h"
+
+1461603020 /home/gabriel/concu/ConcuPark/gabo2/include/Logger.h
+	<string>
+	"Runnable.h"
+	"FifoEscritura.h"
+
+1460478250 /home/gabriel/concu/ConcuPark/gabo2/include/Runnable.h
+	<unistd.h>
+
+1460435311 /home/gabriel/concu/ConcuPark/gabo2/include/FifoEscritura.h
+	"Fifo.h"
+
+1461551360 /home/gabriel/concu/ConcuPark/gabo2/include/Fifo.h
+	<string>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+
+1460478169 /home/gabriel/concu/ConcuPark/gabo2/include/Juego.h
+	"Runnable.h"
+	<string>
+
+1460756766 /home/gabriel/concu/ConcuPark/gabo2/include/Persona.h
+	"Runnable.h"
+	"EventHandler.h"
+	<vector>
+	<string>
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo2/include/EventHandler.h
+
+1461601780 source:/home/gabriel/concu/ConcuPark/gabo2/src/Cola.cpp
+	"Cola.h"
+	"FifoLectura.h"
+	"FifoEscritura.h"
+	"defines.h"
+	"Logger.h"
+	"SignalHandler.h"
+	"SIG_Trap.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1460482687 /home/gabriel/concu/ConcuPark/gabo2/include/Cola.h
+	"Runnable.h"
+	<queue>
+	<unistd.h>
+	<string>
+
+1460435316 /home/gabriel/concu/ConcuPark/gabo2/include/FifoLectura.h
+	"Fifo.h"
+
+1461611465 /home/gabriel/concu/ConcuPark/gabo2/include/defines.h
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo2/include/SignalHandler.h
+	<signal.h>
+	<stdio.h>
+	<memory.h>
+	"EventHandler.h"
+
+1460483250 /home/gabriel/concu/ConcuPark/gabo2/include/SIG_Trap.h
+	<signal.h>
+	<assert.h>
+	"EventHandler.h"
+
+1461601780 source:/home/gabriel/concu/ConcuPark/gabo2/src/Entrada.cpp
+	"Entrada.h"
+	"FifoLectura.h"
+	"FifoEscritura.h"
+	"defines.h"
+	"Logger.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	<time.h>
+	<fstream>
+
+1460482972 /home/gabriel/concu/ConcuPark/gabo2/include/Entrada.h
+	"Runnable.h"
+	<unistd.h>
+	<string>
+	<vector>
+
+1461598160 source:/home/gabriel/concu/ConcuPark/gabo2/src/Fifo.cpp
+	"Fifo.h"
+	<stdio.h>
+
+1460478407 source:/home/gabriel/concu/ConcuPark/gabo2/src/FifoEscritura.cpp
+	"FifoEscritura.h"
+	<stdio.h>
+
+1460478413 source:/home/gabriel/concu/ConcuPark/gabo2/src/FifoLectura.cpp
+	"FifoLectura.h"
+	<stdio.h>
+
+1461611299 source:/home/gabriel/concu/ConcuPark/gabo2/src/Juego.cpp
+	"Juego.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	"Logger.h"
+	"Semaforo.h"
+	"defines.h"
+
+1460478170 /home/gabriel/concu/ConcuPark/gabo2/include/Salida.h
+	"Runnable.h"
+	<string>
+
+1461603888 source:/home/gabriel/concu/ConcuPark/gabo2/src/Logger.cpp
+	"Logger.h"
+	<fstream>
+	<ctime>
+	<sys/time.h>
+	"errno.h"
+	"string.h"
+	"LockFile.h"
+
+1461611317 source:/home/gabriel/concu/ConcuPark/gabo2/src/Persona.cpp
+	"Persona.h"
+	"Logger.h"
+	"defines.h"
+	"SignalHandler.h"
+	"SIG_Trap.h"
+	"Semaforo.h"
+	<random>
+
+1460478237 source:/home/gabriel/concu/ConcuPark/gabo2/src/Runnable.cpp
+	"Runnable.h"
+	<unistd.h>
+	<stdlib.h>
+	<stdio.h>
+	<iostream>
+
+1461601780 source:/home/gabriel/concu/ConcuPark/gabo2/src/Salida.cpp
+	"Salida.h"
+	"FifoLectura.h"
+	"defines.h"
+	"Logger.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	<iostream>
+	<fstream>
+
+1460483289 source:/home/gabriel/concu/ConcuPark/gabo2/src/SIG_Trap.cpp
+	"SIG_Trap.h"
+
+1460355582 source:/home/gabriel/concu/ConcuPark/gabo2/src/SignalHandler.cpp
+	"SignalHandler.h"
+
+1461606320 /home/gabriel/concu/ConcuPark/gabo2/include/Semaforo.h
+	<sys/ipc.h>
+	<sys/sem.h>
+	<sys/types.h>
+	<string>
+
+1461611109 source:/home/gabriel/concu/ConcuPark/gabo2/src/LockFile.cpp
+	"LockFile.h"
+
+1461611095 /home/gabriel/concu/ConcuPark/gabo2/include/LockFile.h
+	<unistd.h>
+	<fcntl.h>
+	<string>
+
+1461611240 source:/home/gabriel/concu/ConcuPark/gabo2/src/Semaforo.cpp
+	"Semaforo.h"
+	"LockFile.h"
+	"Logger.h"
+
+1410147822 /home/gabriel/concu/ConcuPark/gabo2/src/Semaforo.h
+	<sys/ipc.h>
+	<sys/sem.h>
+	<sys/types.h>
+	<string>
+
