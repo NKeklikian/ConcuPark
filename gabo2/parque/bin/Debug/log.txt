@@ -1,49 +1,49 @@
-/---------------------- 08-05-2016 23:22:19 ----------------------/
-23:22:19.285185	MAIN	4312	D.	Empezando simulacion
-23:22:19.285315	MAIN	4312	D.	Creo la caja
-23:22:19.285695	MAIN	4312	D.	Creo al administrador
-23:22:19.286254	MAIN	4312	D.	Creo juegos
-23:22:19.286495	JUEGO	4312	D.	Creando estructuras del juego
-23:22:19.286482	ADMIN	4313	D.	Empiezo el administrador
-23:22:19.286767	ADMIN	4313	D.	Hay 0 en la caja
-23:22:19.287398	MAIN	4312	D.	Creo personas
-23:22:19.287636	JUEGO	4314	D.	Espero a que llegue alguien
-23:22:19.288291	PERSONA	4315	D.	Tengo 5 pesos
-23:22:19.288643	PERSONA	4316	D.	Tengo 5 pesos
-23:22:19.290256	PERSONA	4315	D.	Me pongo en la entrada del juego
-23:22:19.290365	PERSONA	4315	D.	Espero a que me cobren
-23:22:19.290412	JUEGO	4314	D.	Hago pasar una persona para cobrarle
-23:22:19.290485	PERSONA	4316	D.	Me pongo en la entrada del juego
-23:22:19.290533	JUEGO	4314	D.	Guardo 5 pesos en la caja
-23:22:19.290545	PERSONA	4315	D.	Pago 5 pesos al juego juego1
-23:22:19.290575	PERSONA	4316	D.	Espero a que me cobren
-23:22:19.290634	JUEGO	4314	D.	Llego la 1era persona, si no se llena en 5 segs arranco
-23:22:19.290660	PERSONA	4315	D.	Espero a que termine el juego
-23:22:19.290756	JUEGO	4314	D.	Espero a que llegue alguien
-23:22:19.290835	JUEGO	4314	D.	Hago pasar una persona para cobrarle
-23:22:19.290926	JUEGO	4314	D.	Guardo 5 pesos en la caja
-23:22:19.290938	PERSONA	4316	D.	Pago 5 pesos al juego juego1
-23:22:19.291014	JUEGO	4314	D.	Se lleno el juego
-23:22:19.291040	PERSONA	4316	D.	Espero a que termine el juego
-23:22:19.291133	JUEGO	4314	D.	Arranca el juego con 2 personas
-23:22:24.287210	ADMIN	4313	D.	Hay 10 en la caja
-23:22:29.287854	ADMIN	4313	D.	Hay 10 en la caja
-23:22:29.291521	JUEGO	4314	D.	Salen todos del juego
-23:22:29.291831	JUEGO	4314	D.	Dejo salir a una persona
-23:22:29.291986	JUEGO	4314	D.	Espero a que salga
-23:22:29.292067	PERSONA	4315	D.	Paso a la salida
-23:22:29.292210	PERSONA	4315	D.	Me voy del juego juego1
-23:22:29.292350	PERSONA	4315	D.	Me voy del parque, tengo 0 pesos
-23:22:29.292398	JUEGO	4314	D.	Dejo salir a una persona
-23:22:29.292544	JUEGO	4314	D.	Espero a que salga
-23:22:29.292620	PERSONA	4316	D.	Paso a la salida
-23:22:29.292764	PERSONA	4316	D.	Me voy del juego juego1
-23:22:29.292904	PERSONA	4316	D.	Me voy del parque, tengo 0 pesos
-23:22:29.292915	JUEGO	4314	D.	Espero a que llegue alguien
-23:22:29.293970	MAIN	4312	D.	Se fueron todos
-23:22:29.294114	MAIN	4312	D.	Cierro los juegos
-23:22:29.294345	SEM_p	4314	E.	Interrupted system call
-23:22:29.294461	JUEGO	4314	D.	Cierro el juego y todas sus estructuras
-23:22:29.295878	MAIN	4312	D.	Cierro al administrador
-23:22:29.296833	MAIN	4312	D.	Cierro la caja
-23:22:29.297245	MAIN	4312	D.	Simulacion terminada
+/---------------------- 08-05-2016 23:56:10 ----------------------/
+23:56:10.718587	MAIN	4475	D.	Empezando simulacion
+23:56:10.718807	MAIN	4475	D.	Creo la caja
+23:56:10.719077	MAIN	4475	D.	Creo al administrador
+23:56:10.719460	MAIN	4475	D.	Creo juegos
+23:56:10.719629	JUEGO	4475	D.	Creando estructuras del juego
+23:56:10.719653	ADMIN	4476	D.	Empiezo el administrador
+23:56:10.719853	ADMIN	4476	D.	Hay 0 en la caja
+23:56:10.720254	MAIN	4475	D.	Creo personas
+23:56:10.720389	JUEGO	4477	D.	Espero a que llegue alguien
+23:56:10.720910	PERSONA	4478	D.	Tengo 5 pesos
+23:56:10.721209	PERSONA	4479	D.	Tengo 5 pesos
+23:56:10.722770	PERSONA	4478	D.	Me pongo en la entrada del juego
+23:56:10.722929	PERSONA	4478	D.	Espero a que me cobren
+23:56:10.722983	JUEGO	4477	D.	Hago pasar una persona para cobrarle
+23:56:10.723160	JUEGO	4477	D.	Guardo 5 pesos en la caja
+23:56:10.723154	PERSONA	4479	D.	Me pongo en la entrada del juego
+23:56:10.723177	PERSONA	4478	D.	Pago 5 pesos al juego juego1
+23:56:10.723316	JUEGO	4477	D.	Llego la 1era persona, si no se llena en 5 segs arranco
+23:56:10.723369	PERSONA	4479	D.	Espero a que me cobren
+23:56:10.723404	PERSONA	4478	D.	Espero a que termine el juego
+23:56:10.723451	JUEGO	4477	D.	Espero a que llegue alguien
+23:56:10.723566	JUEGO	4477	D.	Hago pasar una persona para cobrarle
+23:56:10.723698	JUEGO	4477	D.	Guardo 5 pesos en la caja
+23:56:10.723716	PERSONA	4479	D.	Pago 5 pesos al juego juego1
+23:56:10.723828	JUEGO	4477	D.	Se lleno el juego
+23:56:10.723867	PERSONA	4479	D.	Espero a que termine el juego
+23:56:10.723923	JUEGO	4477	D.	Arranca el juego con 2 personas
+23:56:15.720236	ADMIN	4476	D.	Hay 10 en la caja
+23:56:20.720832	ADMIN	4476	D.	Hay 10 en la caja
+23:56:20.724187	JUEGO	4477	D.	Salen todos del juego
+23:56:20.724467	JUEGO	4477	D.	Dejo salir a una persona
+23:56:20.724600	JUEGO	4477	D.	Espero a que salga
+23:56:20.724649	PERSONA	4478	D.	Paso a la salida
+23:56:20.724779	PERSONA	4478	D.	Me voy del juego juego1
+23:56:20.724985	JUEGO	4477	D.	Dejo salir a una persona
+23:56:20.725102	JUEGO	4477	D.	Espero a que salga
+23:56:20.725137	PERSONA	4479	D.	Paso a la salida
+23:56:20.725221	PERSONA	4478	D.	Me voy del parque, tengo 0 pesos
+23:56:20.725262	PERSONA	4479	D.	Me voy del juego juego1
+23:56:20.725385	PERSONA	4479	D.	Me voy del parque, tengo 0 pesos
+23:56:20.725431	JUEGO	4477	D.	Espero a que llegue alguien
+23:56:20.726269	MAIN	4475	D.	Se fueron todos
+23:56:20.726400	MAIN	4475	D.	Cierro los juegos
+23:56:20.726616	SEM_p	4477	E.	Interrupted system call
+23:56:20.726716	JUEGO	4477	D.	Cierro el juego y todas sus estructuras
+23:56:20.727934	MAIN	4475	D.	Cierro al administrador
+23:56:20.728785	MAIN	4475	D.	Cierro la caja
+23:56:20.729247	MAIN	4475	D.	Simulacion terminada

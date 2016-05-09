@@ -156,12 +156,14 @@
 	"SIG_Trap.h"
 	<random>
 
-1462760462 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
+1462762519 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
 	<iostream>
 	<vector>
 	<sys/wait.h>
 	<sys/types.h>
 	<unistd.h>
+	<fstream>
+	<sstream>
 	"Juego.h"
 	"Persona.h"
 	"Semaforo.h"
@@ -362,7 +364,7 @@
 	<fcntl.h>
 	<unistd.h>
 
-1462760279 source:/home/gabriel/concu/ConcuPark/gabo2/src/Administrador.cpp
+1462760519 source:/home/gabriel/concu/ConcuPark/gabo2/src/Administrador.cpp
 	"Administrador.h"
 	"SIG_Trap.h"
 	"SignalHandler.h"
