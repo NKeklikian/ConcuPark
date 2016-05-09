@@ -3,11 +3,12 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <unistd.h>
-//#include <stdlib.h>
 #include "Juego.h"
 #include "Persona.h"
 #include "Semaforo.h"
 #include "Logger.h"
+#include "Caja.h"
+#include "Administrador.h"
 
 using namespace std;
 
@@ -15,6 +16,17 @@ using namespace std;
 int main()
 {
     Logger::log("MAIN", "Empezando simulacion", DEBUG);
+
+    // creo la caja
+    Logger::log("MAIN", "Creo la caja", DEBUG);
+    Caja* caja = Caja::getInstance();
+    caja->crear();
+
+    // creo al administrador
+    int periodo_chequeo_caja = 5;
+    Logger::log("MAIN", "Creo al administrador", DEBUG);
+    Administrador administrador(periodo_chequeo_caja);
+    pid_t administrador_pid = administrador.run();
 
     // crear juegos
     Logger::log("MAIN", "Creo juegos", DEBUG);
@@ -27,7 +39,7 @@ int main()
         nom_juegos.push_back(nom_juego);
         costo_juegos.push_back(5); /// costo esta hardcodeado aca
 
-        Juego juego(nom_juego, 2); ///capacidad esta hardcodeada aca
+        Juego juego(nom_juego, 2, costo_juegos[i-1]); ///capacidad esta hardcodeada aca
         pid_t juego_pid = juego.run();
         juegos.push_back(juego_pid);
     }
@@ -52,13 +64,22 @@ int main()
     }
     Logger::log("MAIN", "Se fueron todos", DEBUG);
 
-    // cierro todo
+    // cierro los juegos
     Logger::log("MAIN", "Cierro los juegos", DEBUG);
     while(juegos.size() > 0){
         kill(juegos[juegos.size()-1], SIGINT);
         waitpid(juegos[juegos.size()-1], &status, 0);
         juegos.pop_back();
     }
+
+    // cierro al administrador
+    Logger::log("MAIN", "Cierro al administrador", DEBUG);
+    kill(administrador_pid, SIGINT);
+    waitpid(administrador_pid, &status, 0);
+
+    // cierro la caja
+    Logger::log("MAIN", "Cierro la caja", DEBUG);
+    caja->eliminar();
 
     Logger::log("MAIN", "Simulacion terminada", DEBUG);
     return 0;

@@ -156,7 +156,7 @@
 	"SIG_Trap.h"
 	<random>
 
-1461612056 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
+1462760462 source:/home/gabriel/concu/ConcuPark/gabo2/main.cpp
 	<iostream>
 	<vector>
 	<sys/wait.h>
@@ -166,6 +166,8 @@
 	"Persona.h"
 	"Semaforo.h"
 	"Logger.h"
+	"Caja.h"
+	"Administrador.h"
 
 1461603020 /home/gabriel/concu/ConcuPark/gabo2/include/Logger.h
 	<string>
@@ -185,7 +187,7 @@
 	<fcntl.h>
 	<unistd.h>
 
-1461613063 /home/gabriel/concu/ConcuPark/gabo2/include/Juego.h
+1462759002 /home/gabriel/concu/ConcuPark/gabo2/include/Juego.h
 	<string>
 	"Runnable.h"
 	"Semaforo.h"
@@ -261,12 +263,13 @@
 	"FifoLectura.h"
 	<stdio.h>
 
-1461613259 source:/home/gabriel/concu/ConcuPark/gabo2/src/Juego.cpp
+1462760478 source:/home/gabriel/concu/ConcuPark/gabo2/src/Juego.cpp
 	"Juego.h"
 	"SIG_Trap.h"
 	"SignalHandler.h"
 	"Logger.h"
 	"defines.h"
+	"Caja.h"
 
 1460478170 /home/gabriel/concu/ConcuPark/gabo2/include/Salida.h
 	"Runnable.h"
@@ -337,4 +340,35 @@
 	<sys/sem.h>
 	<sys/types.h>
 	<string>
+
+1462756170 /home/gabriel/concu/ConcuPark/gabo2/src/MemoriaCompartida.h
+	<sys/types.h>
+	<sys/ipc.h>
+	<sys/shm.h>
+	<string>
+
+1462758770 /home/gabriel/concu/ConcuPark/gabo2/include/Caja.h
+	"Semaforo.h"
+	"MemoriaCompartida.h"
+
+1462756170 /home/gabriel/concu/ConcuPark/gabo2/include/MemoriaCompartida.h
+	<sys/types.h>
+	<sys/ipc.h>
+	<sys/shm.h>
+	<string>
+
+1462758951 source:/home/gabriel/concu/ConcuPark/gabo2/src/Caja.cpp
+	"Caja.h"
+	<fcntl.h>
+	<unistd.h>
+
+1462760279 source:/home/gabriel/concu/ConcuPark/gabo2/src/Administrador.cpp
+	"Administrador.h"
+	"SIG_Trap.h"
+	"SignalHandler.h"
+	"Logger.h"
+	"Caja.h"
+
+1462760041 /home/gabriel/concu/ConcuPark/gabo2/include/Administrador.h
+	"Runnable.h"
 

@@ -8,7 +8,7 @@
 class Juego : public Runnable
 {
     public:
-        Juego(std::string n, int cap);
+        Juego(std::string n, int cap, int costo);
         virtual ~Juego();
     protected:
         virtual void _run();
@@ -16,6 +16,7 @@ class Juego : public Runnable
 
         std::string nombre;
         int capacidad;
+        int costo;
 
         Semaforo sem_entrada;
         Semaforo sem_cobrar;

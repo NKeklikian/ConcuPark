@@ -3,8 +3,9 @@
 #include "SignalHandler.h"
 #include "Logger.h"
 #include "defines.h"
+#include "Caja.h"
 
-Juego::Juego(std::string n, int cap) : nombre(n), capacidad(cap),
+Juego::Juego(std::string n, int cap, int costo) : nombre(n), capacidad(cap), costo(costo),
                                         sem_entrada(this->nombre, SEM_ENTRADA, 0),
                                         sem_cobrar(this->nombre, SEM_COBRAR, 0),
                                         sem_salida(this->nombre, SEM_SALIDA, 0),
@@ -48,6 +49,12 @@ void Juego::_run(){
                 Logger::log("JUEGO", "Hago pasar una persona para cobrarle", DEBUG);
                 sem_cobrar.v();
                 ++gente;
+
+                Logger::log("JUEGO", "Guardo " + std::to_string(costo) + " pesos en la caja", DEBUG);
+                Caja* caja = Caja::getInstance();
+                caja->addPlata(costo);
+                //Logger::log("JUEGO", "La caja ahora tiene " + std::to_string(caja->getPlata()) + " pesos", DEBUG);
+
                 // desde que llega el primero empiezo el timer
                 if(gente == 1){
                     Logger::log("JUEGO", "Llego la 1era persona, si no se llena en 5 segs arranco", DEBUG);
@@ -88,4 +95,5 @@ void Juego::_run(){
     sem_salida.eliminar();
     sem_salir.eliminar();
     unlink(this->nombre.c_str());
+    SignalHandler::destruir();
 }
