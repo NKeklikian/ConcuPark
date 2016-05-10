@@ -15,6 +15,7 @@
 					<Add option="-std=c++11" />
 					<Add option="-g" />
 					<Add directory="../include" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -34,6 +36,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../include/Administrador.h" />
+		<Unit filename="../include/Caja.h" />
 		<Unit filename="../include/EventHandler.h" />
 		<Unit filename="../include/Fifo.h" />
 		<Unit filename="../include/FifoEscritura.h" />
@@ -41,6 +45,7 @@
 		<Unit filename="../include/Juego.h" />
 		<Unit filename="../include/LockFile.h" />
 		<Unit filename="../include/Logger.h" />
+		<Unit filename="../include/MemoriaCompartida.h" />
 		<Unit filename="../include/Persona.h" />
 		<Unit filename="../include/Runnable.h" />
 		<Unit filename="../include/SIG_Trap.h" />
@@ -48,6 +53,8 @@
 		<Unit filename="../include/SignalHandler.h" />
 		<Unit filename="../include/defines.h" />
 		<Unit filename="../main.cpp" />
+		<Unit filename="../src/Administrador.cpp" />
+		<Unit filename="../src/Caja.cpp" />
 		<Unit filename="../src/Fifo.cpp" />
 		<Unit filename="../src/FifoEscritura.cpp" />
 		<Unit filename="../src/FifoLectura.cpp" />
