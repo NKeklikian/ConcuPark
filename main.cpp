@@ -52,6 +52,7 @@ void cargarArchivoConfiguracion(int &periodo_chequeo_caja, int &cant_juegos,
     // leo costo y capacidad de cada juego
     for(int i = 0; i < cant_juegos; ++i){
         getline(input_file, temp);
+        ss.clear();
         ss << temp;
 
         getline(ss, t, ' ');
