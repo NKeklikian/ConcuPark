@@ -24,6 +24,9 @@ class Juego : public Runnable
         Semaforo sem_salida;
         Semaforo sem_salir;
 
+        std::string LOG_JUEGO;
+        static int cant;
+
         void init();
 };
 

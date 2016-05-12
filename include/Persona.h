@@ -20,6 +20,9 @@ class Persona : public Runnable
         std::vector<std::string> nom_juegos;
         std::vector<int> costo_juegos;
 
+        std::string LOG_PERSONA;
+        static int cant;
+
         void init();
 };
 
