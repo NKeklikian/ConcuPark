@@ -19,6 +19,7 @@ class Juego : public Runnable
         int costo;
 
         Semaforo sem_entrada;
+        Semaforo sem_entrada_libre;
         Semaforo sem_cobrar;
         Semaforo sem_salida;
         Semaforo sem_salir;

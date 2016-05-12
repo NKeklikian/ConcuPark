@@ -58,6 +58,8 @@ void Persona::_run(){
 
         Semaforo sem_entrada(nombre, SEM_ENTRADA, 0);
         sem_entrada.get();
+        Semaforo sem_entrada_libre(nombre, SEM_ENTRADA_LIBRE, 0);
+        sem_entrada_libre.get();
         Semaforo sem_cobrar(nombre, SEM_COBRAR, 0);
         sem_cobrar.get();
         Semaforo sem_salida(nombre, SEM_SALIDA, 0);
@@ -65,16 +67,21 @@ void Persona::_run(){
         Semaforo sem_salir(nombre, SEM_SALIR, 0);
         sem_salir.get();
 
+        Logger::log("PERSONA", "Me pongo en la entrada del juego", DEBUG);
+        Logger::log("PERSONA", "Espero a que me cobren", DEBUG);
         // aviso a la entrada que llegue
         sem_entrada.v();
-        Logger::log("PERSONA", "Me pongo en la entrada del juego", DEBUG);
         // espero a que me cobren
-        Logger::log("PERSONA", "Espero a que me cobren", DEBUG);
         sem_cobrar.p();
+
         int pagar = costo_juegos[chosen_game];
         plata -= pagar;
         //intermedio = "Pago " + std::to_string(pagar) + " pesos al juego " + nombre;
         Logger::log("PERSONA", "Pago " + std::to_string(pagar) + " pesos al juego " + nombre, DEBUG);
+
+        Logger::log("PERSONA", "Entro al juego " + nombre, DEBUG);
+        sem_entrada_libre.v();
+
         // espero a que termine el juego
         Logger::log("PERSONA", "Espero a que termine el juego", DEBUG);
         sem_salir.p();
@@ -83,6 +90,7 @@ void Persona::_run(){
         Logger::log("PERSONA", "Me voy del juego " + nombre, DEBUG);
         sem_salida.v();
     }
+
     std::string intermedio = "Me voy del parque, me quedaron " + std::to_string(plata) + " pesos";
     Logger::log("PERSONA", intermedio, DEBUG);
 }

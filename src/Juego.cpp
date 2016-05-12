@@ -7,6 +7,7 @@
 
 Juego::Juego(std::string n, int cap, int costo) : nombre(n), capacidad(cap), costo(costo),
                                         sem_entrada(this->nombre, SEM_ENTRADA, 0),
+                                        sem_entrada_libre(this->nombre, SEM_ENTRADA_LIBRE, 0),
                                         sem_cobrar(this->nombre, SEM_COBRAR, 0),
                                         sem_salida(this->nombre, SEM_SALIDA, 0),
                                         sem_salir(this->nombre, SEM_SALIR, 0)
@@ -26,6 +27,7 @@ void Juego::init(){
     close ( open ( this->nombre.c_str(),O_CREAT,0777 ) );
 
     sem_entrada.crear();
+    sem_entrada_libre.crear();
     sem_cobrar.crear();
     sem_salida.crear();
     sem_salir.crear();
@@ -54,6 +56,9 @@ void Juego::_run(){
                 Caja* caja = Caja::getInstance();
                 caja->addPlata(costo);
                 //Logger::log("JUEGO", "La caja ahora tiene " + std::to_string(caja->getPlata()) + " pesos", DEBUG);
+
+                Logger::log("JUEGO", "Espero a que entre la persona", DEBUG);
+                sem_entrada_libre.p();
 
                 // desde que llega el primero empiezo el timer
                 if(gente == 1){
@@ -91,6 +96,7 @@ void Juego::_run(){
 
     Logger::log("JUEGO", "Cierro el juego y todas sus estructuras", DEBUG);
     sem_entrada.eliminar();
+    sem_entrada_libre.eliminar();
     sem_cobrar.eliminar();
     sem_salida.eliminar();
     sem_salir.eliminar();

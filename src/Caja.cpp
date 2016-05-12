@@ -1,10 +1,11 @@
 #include "Caja.h"
+#include "defines.h"
 #include <fcntl.h>
 #include <unistd.h>
 
 static Caja* instance = 0;
 
-Caja::Caja() : plata("caja", 4), sem_caja("caja", 4, 1)
+Caja::Caja() : plata("caja", 4), sem_caja("caja", SEM_CAJA, 1)
 {
 
 }

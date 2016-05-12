@@ -374,7 +374,7 @@
 1462760041 /home/gabriel/concu/ConcuPark/gabo2/include/Administrador.h
 	"Runnable.h"
 
-1462859450 source:/home/gabriel/concu/ConcuPark/main.cpp
+1462998438 source:/home/gabriel/concu/ConcuPark/main.cpp
 	<iostream>
 	<vector>
 	<sys/wait.h>
@@ -389,12 +389,12 @@
 	"Caja.h"
 	"Administrador.h"
 
-1462859450 /home/gabriel/concu/ConcuPark/include/Juego.h
+1463071200 /home/gabriel/concu/ConcuPark/include/Juego.h
 	<string>
 	"Runnable.h"
 	"Semaforo.h"
 
-1462859450 /home/gabriel/concu/ConcuPark/include/Runnable.h
+1462998438 /home/gabriel/concu/ConcuPark/include/Runnable.h
 	<unistd.h>
 
 1462859450 /home/gabriel/concu/ConcuPark/include/Semaforo.h
@@ -403,7 +403,7 @@
 	<sys/types.h>
 	<string>
 
-1462859450 /home/gabriel/concu/ConcuPark/include/Persona.h
+1462998438 /home/gabriel/concu/ConcuPark/include/Persona.h
 	"Runnable.h"
 	"EventHandler.h"
 	<vector>
@@ -436,10 +436,10 @@
 	<sys/shm.h>
 	<string>
 
-1462859450 /home/gabriel/concu/ConcuPark/include/Administrador.h
+1462998438 /home/gabriel/concu/ConcuPark/include/Administrador.h
 	"Runnable.h"
 
-1462859450 source:/home/gabriel/concu/ConcuPark/src/Administrador.cpp
+1462998438 source:/home/gabriel/concu/ConcuPark/src/Administrador.cpp
 	"Administrador.h"
 	"SIG_Trap.h"
 	"SignalHandler.h"
@@ -457,8 +457,9 @@
 	<memory.h>
 	"EventHandler.h"
 
-1462859450 source:/home/gabriel/concu/ConcuPark/src/Caja.cpp
+1463071301 source:/home/gabriel/concu/ConcuPark/src/Caja.cpp
 	"Caja.h"
+	"defines.h"
 	<fcntl.h>
 	<unistd.h>
 
@@ -477,7 +478,7 @@
 1462859450 /home/gabriel/concu/ConcuPark/include/FifoLectura.h
 	"Fifo.h"
 
-1462859450 source:/home/gabriel/concu/ConcuPark/src/Juego.cpp
+1463071310 source:/home/gabriel/concu/ConcuPark/src/Juego.cpp
 	"Juego.h"
 	"SIG_Trap.h"
 	"SignalHandler.h"
@@ -485,7 +486,7 @@
 	"defines.h"
 	"Caja.h"
 
-1462859450 /home/gabriel/concu/ConcuPark/include/defines.h
+1463071093 /home/gabriel/concu/ConcuPark/include/defines.h
 
 1462859450 source:/home/gabriel/concu/ConcuPark/src/LockFile.cpp
 	"LockFile.h"
@@ -504,7 +505,7 @@
 	"string.h"
 	"LockFile.h"
 
-1462859450 source:/home/gabriel/concu/ConcuPark/src/Persona.cpp
+1463071420 source:/home/gabriel/concu/ConcuPark/src/Persona.cpp
 	"Persona.h"
 	"Logger.h"
 	"defines.h"
@@ -513,7 +514,7 @@
 	"Semaforo.h"
 	<random>
 
-1462859450 source:/home/gabriel/concu/ConcuPark/src/Runnable.cpp
+1462998438 source:/home/gabriel/concu/ConcuPark/src/Runnable.cpp
 	<unistd.h>
 	<stdlib.h>
 	<stdio.h>
