@@ -1,0 +1,12 @@
+#ifndef DEFINES_H_INCLUDED
+#define DEFINES_H_INCLUDED
+
+// SEM_IDs
+#define SEM_ENTRADA 0
+#define SEM_ENTRADA_LIBRE 1
+#define SEM_COBRAR 2
+#define SEM_SALIDA 3
+#define SEM_SALIR 4
+#define SEM_CAJA 5
+
+#endif // DEFINES_H_INCLUDED

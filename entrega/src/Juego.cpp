@@ -81,7 +81,7 @@ void Juego::_run(){
             Logger::log(LOG_JUEGO, "Arranca el juego con " + std::to_string(gente) + " personas", DEBUG);
 
             // simulo la duracion del juego
-            sleep(1);
+            sleep(10);
             Logger::log(LOG_JUEGO, "Salen todos del juego", DEBUG);
         }
 

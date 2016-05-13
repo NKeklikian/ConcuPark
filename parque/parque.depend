@@ -374,7 +374,7 @@
 1462760041 /home/gabriel/concu/ConcuPark/gabo2/include/Administrador.h
 	"Runnable.h"
 
-1462998438 source:/home/gabriel/concu/ConcuPark/main.cpp
+1463083447 source:/home/gabriel/concu/ConcuPark/main.cpp
 	<iostream>
 	<vector>
 	<sys/wait.h>
@@ -430,11 +430,12 @@
 	"Semaforo.h"
 	"MemoriaCompartida.h"
 
-1462859450 /home/gabriel/concu/ConcuPark/include/MemoriaCompartida.h
+1463096564 /home/gabriel/concu/ConcuPark/include/MemoriaCompartida.h
 	<sys/types.h>
 	<sys/ipc.h>
 	<sys/shm.h>
 	<string>
+	"Logger.h"
 
 1462998438 /home/gabriel/concu/ConcuPark/include/Administrador.h
 	"Runnable.h"
@@ -505,7 +506,7 @@
 	"string.h"
 	"LockFile.h"
 
-1463075223 source:/home/gabriel/concu/ConcuPark/src/Persona.cpp
+1463092954 source:/home/gabriel/concu/ConcuPark/src/Persona.cpp
 	"Persona.h"
 	"Logger.h"
 	"defines.h"
